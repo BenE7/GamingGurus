@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Nav from "../Nav"
 import TwitchStream from "../TwitchStream"
 
-class Home extends Component {
+class Game extends Component {
 render() {
    return (
       <div>
       <Nav/>
-      
-       Home
+      <TwitchStream/>
+       Game
       
 
        </div>
@@ -16,8 +16,4 @@ render() {
       );
     }
 }
-    export default Home;
-
-
-
-    
+    export default Game;
