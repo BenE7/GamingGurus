@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Nav from "../Nav"
+import Nav from "../Nav";
+import UserInfo from "../UserInfo";
 
 class Teacher extends Component {
     render() {
@@ -7,6 +8,7 @@ class Teacher extends Component {
           <div>
           <Nav/>
            Teacher
+           <UserInfo />
            </div>
            
           );
