@@ -7,7 +7,7 @@ render() {
    return (
       <div>
       <Nav/>
-      <TwitchStream/>
+ 
        Game
       
 

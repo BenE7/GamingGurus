@@ -2,7 +2,7 @@ const express = require ("express");
 const path = require ("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes/api/articleRoutes");
+//const routes = require("./routes/api/")
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // Serve up static assets
 
 // Add routes, both API and view
-app.use(routes);
+//app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
