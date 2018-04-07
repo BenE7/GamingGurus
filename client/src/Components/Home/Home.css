@@ -1,0 +1,145 @@
+html {
+  background-color: #004059;
+}
+
+.home {
+  background-image: url("./controller.jpg");
+  height: 800px;
+  width: auto;
+  background-position: 2240px 1505px;
+}
+
+#mainhead {
+  margin-top: 40px;
+  margin-left: 215px;
+  font-family: "Bungee Shade";
+  font-size: 70px;
+  color: #6441A4;
+  text-shadow: 2px 1px black;
+}
+
+#wrapper {
+  border: linear-gradient(to right, rgba(255, 0, 0, 0), #004059(0, 255, 255));
+  float: left;
+  height: 265px;
+  width: 980px;
+  margin-top: 70px;
+  margin-left: 210px;
+  box-shadow: 5px 5px 5px 5px black;
+  background: linear-gradient(to right, #004059, #6441A4);
+}
+
+#mainbox {
+  border-left: 3px inset black;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  top: 3;
+}
+
+
+#mario {
+  margin-top: -265px;
+  margin-left: -503px;
+}
+
+#games {
+  z-index: 1;
+  margin-left: -8px;
+}
+
+#inputbox {
+  position: absolute;
+  margin-top: -91px;
+  margin-left: 20px;
+  z-index: 0;
+}
+
+#searchtext {
+  color: #6441A4;
+  margin-top: 20px;
+  font-family: "Bungee Shade";
+}
+
+#teachersignup {
+  border: 1px solid #6441A4;
+  background-color: #1E2D26;
+  margin-top: 190px;
+  margin-left: -250px;
+}
+
+#teacherlogin {
+  border: 1px solid #6441A4;
+  background-color: #1E2D26;
+  margin-top: 190px;
+  margin-left: 40px;
+}
+
+#bethe {
+  font-family: "Press Start 2P";
+  text-shadow: 1px 1px 1px #D20014;
+  color: black;
+  position: absolute;
+  margin-left: 215px;
+  font-size: 40px;
+}
+
+#betheteacher {
+  font-family: "Press Start 2P";
+  text-shadow: 1px 1px 1px #D20014;
+  color: black;
+  position: absolute;
+  margin-left: 190px;
+  margin-top: 48px;
+  font-size: 39px;
+  display: inline-block;
+}
+
+#betheg {
+  font-family: "Press Start 2P";
+  font-size: 39px;
+  text-shadow: 1px 1px 0 #FCDBC4;
+  color: black;
+  margin-top: 3px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+#bethegamer {
+  font-family: "Press Start 2P";
+  text-shadow: 1px 1px 0 #FCDBC4;
+  color: black;
+  position: absolute;
+  margin-top: 48px;
+  margin-left: 20px;
+}
+
+/* .card {
+  background-color: #004059;
+  margin-top: 320px;
+  width: 240px;
+  position: absolute;
+  box-shadow: 5px 5px 5px 5px black;
+} */
+
+#teachertext {
+  font-family: "Bungee Shade";
+  font-size: 17px;
+}
+
+#gamertext {
+  font-family: "Bungee Shade";
+  font-size: 17px;
+}
+
+#container {
+  background-color: #004059;
+}
+
+#mainlogo {
+  margin-top: -140px;
+  margin-left: -25px;
+  transform: rotate(-1deg);
+  position: absolute;
+}
