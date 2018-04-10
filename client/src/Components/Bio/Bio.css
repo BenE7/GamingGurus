@@ -1,0 +1,13 @@
+#bio-wrapper {
+  font-family: "Tajawal";
+  background-color: #004059;
+  border-radius: 15px;
+  border: 3px solid #5dc21e;
+  color: #5dc21e;
+}
+
+#bio-head {
+  font-family: "Press Start 2P";
+  padding: 10px auto;
+  margin: 10px auto;
+}
