@@ -2,7 +2,7 @@ html {
   background-color: #004059;
 }
 
-.home {
+.#home {
   background-image: url("./controller.jpg");
   height: 800px;
   width: auto;
@@ -11,7 +11,7 @@ html {
 
 #mainhead {
   margin-top: 40px;
-  margin-left: 215px;
+  margin-left: 16%;
   font-family: "Bungee Shade";
   font-size: 70px;
   color: #6441A4;
@@ -24,7 +24,7 @@ html {
   height: 265px;
   width: 980px;
   margin-top: 70px;
-  margin-left: 210px;
+  margin-left: 12%;
   box-shadow: 5px 5px 5px 5px black;
   background: linear-gradient(to right, #004059, #6441A4);
 }
@@ -37,7 +37,6 @@ html {
   margin-left: -10px;
   top: 3;
 }
-
 
 #mario {
   margin-top: -265px;
