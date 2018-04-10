@@ -4,6 +4,9 @@ import UserInfo from "../UserInfo";
 import Bio from "../Bio";
 
 class Teacher extends Component {
+    state = {
+        user: []
+    }
     render() {
        return (
           <div>
