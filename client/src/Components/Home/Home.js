@@ -3,6 +3,8 @@ import Nav from "../Nav"
 import Search from "../SearchBar/Search"
 import TwitchStream from "../TwitchStream"
 import API from "../../utils/API"
+import User from "../../Components/UserInfo"
+import TopGames from "../../Components/TopGames"
 
 class Home extends Component {
 
@@ -12,7 +14,9 @@ class Home extends Component {
         height: '480',
         channel: '',
         twitchSearch : '',
-        searched : 0
+        searched : 0,
+        gameBool : false,
+        TopGames : []
              
       }
 
@@ -31,11 +35,9 @@ class Home extends Component {
         })
       }
 
-
-       
-      handleSubmitForm = (event) => {
+    handleSubmitForm = (event) => {
       //  this.setState({  searched: 1 })   
-        // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+        // When the form is submitted, prevent its default behavior
         event.preventDefault();
         API.search(this.state.twitchSearch)
        
@@ -45,6 +47,7 @@ class Home extends Component {
             console.log(res.data)
             this.setState({  channel: res.data.streams[0].channel.display_name , searched: 0   });
        // this.handleVid()
+       
         })  
     
     
@@ -53,16 +56,16 @@ class Home extends Component {
       };
       
       
-      dothingm = (event) => {
-        //  this.setState({  searched: 1 })   
-          // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-          event.preventDefault();
-          API.searchTop
+      dothing = (event) => {
+
+         // event.preventDefault();
+          API.searchTop()
          
   
           .then(res => { 
               console.log(res)
-              console.log(res.data)
+              console.log(res.data.top)
+              this.setState({ TopGames : res.data.top  });
              
          // this.handleVid()
           })  
@@ -75,17 +78,19 @@ class Home extends Component {
         
 
 
-// componentDidMount() {
-//   API.search('Starcraft')
-//         .then(res => { 
-//             console.log(res)
-//             console.log(res.data)
-//             this.setState({  channel: res.data.streams[0].channel.display_name });
+       
+
+ componentDidMount() {
+    this.dothing()
+    console.log('saveUser')
+    API.saveUser({
+      twitchToken: Math.floor(Math.random() * 100000000000000 + 1)
      
-//         })  
-//     }
+    })
+    }
 
 render() {
+  console.log(this.state.TopGames)
    return (
       <div>
       <Nav/>
@@ -97,7 +102,8 @@ render() {
         ? <TwitchStream {...this.state} />
         : <p>There are no results :( </p>
         }
-     
+        <User/>
+        <TopGames TopGames={this.state.TopGames}/>
         
        </div>
        

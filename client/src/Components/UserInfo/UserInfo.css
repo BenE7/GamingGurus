@@ -1,0 +1,64 @@
+#UserInfo {
+  background-color: #004059;
+  border-radius: 15px;
+  border: 3px solid #5dc21e;
+  height: 225px;
+}
+
+.row {
+  margin-bottom: 0 !important;
+}
+
+#user-pic {
+  margin: 5px 5px 5px 25px;
+  padding: 5px;
+}
+
+.gt-pic {
+  height: 35px;
+  width: 35px;
+}
+
+#gamertags {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  margin: 30px 10px;
+}
+
+.gt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #5dc21e;
+  font-family: "Press Start 2P";
+  font-size: 10px;
+}
+
+#rate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #d20014;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Origicide';
+}
+
+#dollars {
+  font-size: 100px;
+  align-items: center;
+}
+
+#per {
+  font-size:15px;
+}
+
+.calendar {
+  height: 120px;
+  width: 120px;
+  margin: 25px;
+}
