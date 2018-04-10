@@ -10,11 +10,10 @@ const App = (props) =>
 
     <Switch>
     
-    {
-      (gameBool) 
-      ? <Route exact path = "/Game" component={Game} />
-      : <Route exact path = "/" component={Home} />
-      }
+   
+       <Route exact path = "/Game" component={Game} />
+       <Route exact path = "/" component={Home} />
+     
    
     <Route exact path = "/teacher" component={Teacher} />
     

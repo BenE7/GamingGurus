@@ -3,6 +3,9 @@ import Nav from "../Nav";
 import UserInfo from "../UserInfo";
 
 class Teacher extends Component {
+    state = {
+        user: []
+    }
     render() {
        return (
           <div>

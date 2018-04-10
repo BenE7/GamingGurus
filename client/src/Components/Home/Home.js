@@ -3,6 +3,8 @@ import Nav from "../Nav"
 import Search from "../SearchBar/Search"
 import TwitchStream from "../TwitchStream"
 import API from "../../utils/API"
+import User from "../../Components/UserInfo"
+import TopGames from "../../Components/TopGames"
 import "./Home.css";
 
 
@@ -14,7 +16,9 @@ class Home extends Component {
         height: '480',
         channel: '',
         twitchSearch : '',
-        searched : 0
+        searched : 0,
+        gameBool : false,
+        TopGames : []
              
       }
 
@@ -33,11 +37,9 @@ class Home extends Component {
         })
       }
 
-
-       
-      handleSubmitForm = (event) => {
+    handleSubmitForm = (event) => {
       //  this.setState({  searched: 1 })   
-        // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+        // When the form is submitted, prevent its default behavior
         event.preventDefault();
         API.search(this.state.twitchSearch)
        
@@ -47,6 +49,7 @@ class Home extends Component {
             console.log(res.data)
             this.setState({  channel: res.data.streams[0].channel.display_name , searched: 0   });
        // this.handleVid()
+       
         })  
     
     
@@ -55,16 +58,16 @@ class Home extends Component {
       };
       
       
-      dothingm = (event) => {
-        //  this.setState({  searched: 1 })   
-          // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-          event.preventDefault();
-          API.searchTop
+      dothing = (event) => {
+
+         // event.preventDefault();
+          API.searchTop()
          
   
           .then(res => { 
               console.log(res)
-              console.log(res.data)
+              console.log(res.data.top)
+              this.setState({ TopGames : res.data.top  });
              
          // this.handleVid()
           })  
@@ -75,36 +78,23 @@ class Home extends Component {
         };
         
         
-
-
-// componentDidMount() {
-//   API.search('Starcraft')
-//         .then(res => { 
-//             console.log(res)
-//             console.log(res.data)
-//             this.setState({  channel: res.data.streams[0].channel.display_name });
+ componentDidMount() {
+    this.dothing()
+    console.log('saveUser')
+    API.saveUser({
+      twitchToken: Math.floor(Math.random() * 100000000000000 + 1)
      
-//         })  
-//     }
-// chris code for testing
+    })
+    }
+
 render() {
+  console.log(this.state.TopGames)
    return (
 
       <div>
       <Nav/>
-       <Search name="twitchSearch" changeOnInput={this.handleInputChange} handleSubmit={this.handleSubmitForm}/>
-       Home
+  <div className="home">
        
-       {
-        (this.state.channel) 
-        ? <TwitchStream {...this.state} />
-        : <p>There are no results :( </p>
-        }
-     
-        
-       </div>
-// end chris code testing
-    <div className="home">
         <h1 id="mainhead">Genuine Game Gurus</h1>
         <h1 id="mainlogo"><img height="200" width="250" src={process.env.PUBLIC_URL + "./assets/images/logo2.png"}/></h1>
         <div id="wrapper">
@@ -114,8 +104,7 @@ render() {
                     <h1 id="bethegamer">Gamer!</h1>
                     <img width="485" height="265" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
                     <div id="inputbox" class="col-xs-3">
-                        <label id="searchtext" for="ex2"></label>
-                        <input placeholder="Search Your Game" class="form-control" id="ex2" type="text"/>
+                    <Search name="twitchSearch" changeOnInput={this.handleInputChange} handleSubmit={this.handleSubmitForm}/>
                     </div>
                 </div>
 
@@ -126,10 +115,18 @@ render() {
                     <button type="button" id="teachersignup" class="btn btn-primary">Sign Up</button>
                     <button type="button" id="teacherlogin" class="btn btn-primary">Log In</button>
                 </div>
+
+                {
+                  (this.state.channel) 
+                  ? <TwitchStream {...this.state} />
+                  : <p>There are no results :( </p>
+                  }
+                <TopGames TopGames={this.state.TopGames}/>
             </div>
 
         </div>
     
+    </div>
     </div>
 
        
