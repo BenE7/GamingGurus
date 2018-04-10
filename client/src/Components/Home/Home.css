@@ -2,7 +2,7 @@ html {
   background-color: #004059;
 }
 
-.#home {
+#home {
   background-image: url("./controller.jpg");
   height: 800px;
   width: auto;
@@ -30,18 +30,9 @@ html {
 }
 
 #mainbox {
-  border-left: 3px inset black;
-  height: 100px;
-  position: absolute;
-  left: 50%;
-  margin-left: -10px;
-  top: 3;
+  border: 3px inset black;
 }
 
-#mario {
-  margin-top: -265px;
-  margin-left: -503px;
-}
 
 #games {
   z-index: 1;

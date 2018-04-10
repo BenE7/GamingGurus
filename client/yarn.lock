@@ -5604,7 +5604,6 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-<<<<<<< HEAD
 react-dom@^15.3.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
@@ -5613,8 +5612,6 @@ react-dom@^15.3.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-=======
->>>>>>> ba1705bc141ccfaf70f449dc866ce3dfe1012d4d
 
 react-dom@^16.3.1:
   version "16.3.1"
@@ -5629,15 +5626,12 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-<<<<<<< HEAD
 react-rating-system@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-rating-system/-/react-rating-system-1.0.7.tgz#4ea1c61f0aff8005a32e4b4c603d22d286479b23"
   dependencies:
     react "^15.3.1"
     react-dom "^15.3.1"
-=======
->>>>>>> ba1705bc141ccfaf70f449dc866ce3dfe1012d4d
 
 react-router-dom@^4.2.2:
   version "4.2.2"
@@ -5661,17 +5655,6 @@ react-router@^4.2.0:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
-<<<<<<< HEAD
-=======
-
-react-rating-system@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/react-rating-system/-/react-rating-system-1.0.7.tgz#4ea1c61f0aff8005a32e4b4c603d22d286479b23"
-  dependencies:
-    react "^15.3.1"
-    react-dom "^15.3.1"
-
->>>>>>> ba1705bc141ccfaf70f449dc866ce3dfe1012d4d
 
 react-scripts@1.1.4:
   version "1.1.4"
@@ -5718,10 +5701,6 @@ react-scripts@1.1.4:
   optionalDependencies:
     fsevents "^1.1.3"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ba1705bc141ccfaf70f449dc866ce3dfe1012d4d
 react@^15.3.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
@@ -5732,10 +5711,6 @@ react@^15.3.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ba1705bc141ccfaf70f449dc866ce3dfe1012d4d
 react@^16.3.1:
   version "16.3.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.3.1.tgz#4a2da433d471251c69b6033ada30e2ed1202cfd8"
