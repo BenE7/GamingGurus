@@ -91,10 +91,12 @@ render() {
   console.log(this.state.TopGames)
    return (
 
+
       <div>
       <Nav/>
   <div className="home">
        
+
         <h1 id="mainhead">Genuine Game Gurus</h1>
         <h1 id="mainlogo"><img height="200" width="250" src={process.env.PUBLIC_URL + "./assets/images/logo2.png"}/></h1>
         <div id="wrapper">

@@ -2,11 +2,7 @@
   background-color: #004059;
   border-radius: 15px;
   border: 3px solid #5dc21e;
-  height: 225px;
-}
-
-.row {
-  margin-bottom: 0 !important;
+  
 }
 
 #user-pic {
@@ -49,16 +45,18 @@
 }
 
 #dollars {
+  margin-left: 100px;
   font-size: 100px;
   align-items: center;
 }
 
 #per {
   font-size:15px;
+  font-family: "Press Start 2P"
 }
 
 .calendar {
   height: 120px;
   width: 120px;
-  margin: 25px;
+  margin: 50px;
 }
