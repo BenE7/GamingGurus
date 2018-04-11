@@ -1,12 +1,13 @@
 import React from "react";
+import "./TopGames.css"
 
 const TopGames = props => {
   
     return (
-       <div>
+       <div id="topgames">
        {props.TopGames.map((Game, index) => (
-           <div key={index} className="card">
-             <h5 className="card-header">
+           <div key={index} className="field">
+             <h5 className="field-header">
                {Game.game.name} 
                
              </h5>
