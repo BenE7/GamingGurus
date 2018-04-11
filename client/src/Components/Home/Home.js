@@ -4,7 +4,7 @@ import Search from "../SearchBar/Search"
 import TwitchStream from "../TwitchStream"
 import API from "../../utils/API"
 import User from "../../Components/UserInfo"
-import TopGames from "../../Components/TopGames"
+import TopGames from "../TopGames"
 import "./Home.css";
 
 
@@ -93,31 +93,31 @@ render() {
 
 
       <div>
-   
   <div id="home">
        
 
         <h1 id="mainhead">Genuine Game Gurus</h1>
         <h1 id="mainlogo"><img height="200" width="250" src={process.env.PUBLIC_URL + "./assets/images/logo2.png"}/></h1>
-        <div className="container" >
-            <div  className="row" id="mainbox">
-            <div className="col" >
+        <div id="wrapper" className="container" >
+            <div  className="row">
+            <div className="col s12">
+            <div className="col s6" >
                     <h1 id="bethe">Be the</h1>
                     <h1 id="betheteacher">Teacher!</h1>
-                    <img width="85%" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
-                    <button type="button" id="teachersignup" class="btn btn-primary">Sign Up</button>
-                    <button type="button" id="teacherlogin" class="btn btn-primary">Log In</button>
-                </div>
-
-                <div className="col" >
-                    <h1 id="betheg">Be the</h1>
-                    <h1 id="bethegamer">Gamer!</h1>
-                    <img width="85%" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
-                    <div id="inputbox" class="col-xs-3">
-                    <Search name="twitchSearch" changeOnInput={this.handleInputChange} handleSubmit={this.handleSubmitForm}/>
+                    <img id="mario" width="495" height="265" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
+                    <div id="buttonsdiv">
                     </div>
                 </div>
 
+                <div className="col s6" >
+                    <h1 id="betheg">Be the</h1>
+                    <h1 id="bethegamer">Gamer!</h1>
+                    <img id="games"  width="489" height="265" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
+                    <div id="inputbox" class="col-xs-3">
+                    <Search id="search" name="twitchSearch" changeOnInput={this.handleInputChange} handleSubmit={this.handleSubmitForm}/>
+                    </div>
+                </div>
+            </div>
                 
             </div>
                 {
