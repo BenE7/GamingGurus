@@ -2,7 +2,7 @@ html {
   background-color: #004059;
 }
 
-.#home {
+#home {
   background-image: url("./controller.jpg");
   height: 800px;
   width: auto;

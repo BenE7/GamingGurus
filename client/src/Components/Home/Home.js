@@ -93,8 +93,7 @@ render() {
 
 
       <div>
-      <Nav/>
-  <div className="home">
+  <div id="home">
        
 
         <h1 id="mainhead">Genuine Game Gurus</h1>
