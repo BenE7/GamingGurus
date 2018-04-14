@@ -7,6 +7,7 @@ import "./Search.css"
     return (
       <div>
     
+
       <div class="row">
       <div class="col s6">
         <div class="row">
@@ -14,6 +15,7 @@ import "./Search.css"
             <input name={props.name}  onChange={props.changeOnInput}  {...props}type="text" id="autocomplete-input" class="autocomplete"/>
             <button onClick={props.handleSubmit} class="btn waves-effect waves-light" type="submit" name="action">Submit
   <i class="material-icons right">send</i>
+
 </button>
           </div>
         </div>

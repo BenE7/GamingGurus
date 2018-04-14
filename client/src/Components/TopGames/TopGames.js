@@ -3,6 +3,7 @@ import "./TopGames.css"
 
 const TopGames = props => {
   
+
     return <div id="topgames">
         {props.TopGames.map((Game, index) => (
           <div key={index} className="field">
@@ -20,6 +21,7 @@ const TopGames = props => {
           </div>
         ))}
       </div>;
+
    
     }
 

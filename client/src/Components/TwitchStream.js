@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API.js";
 import "./TwitchStream.css";
 
+
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
 
@@ -24,19 +25,20 @@ const TwitchStream=(props) => {
         });
         document.body.appendChild(script);
     
-    
-
-    
- 
-    
-        return (
+     return (
           <div>
+
             <div className="gamepagestream" id={props.targetID}></div>
           </div>
         )
       
     }
     
+export default TwitchStream;
+
+
+
+
     // TwitchStream.defaultProps = {
     //    targetID: 'twitch-embed',
     //    width: '940',
@@ -54,7 +56,3 @@ const TwitchStream=(props) => {
         //  })
 
         // }
-
-
-export default TwitchStream;
-

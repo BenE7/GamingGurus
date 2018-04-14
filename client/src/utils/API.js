@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// const qs = require('qs');
 let BASEURL = 'https://api.twitch.tv/kraken/search/streams?query=';
 //let BASEURL = 'https://api.twitch.tv/helix/streams/?game=';
 
@@ -39,7 +39,30 @@ export default {
       // Saves a User to the database
       saveUser: function(UserData) {
         return axios.post("/api/users", UserData);
+      },
+
+      findUser : function(id){
+        return axios.get("/api/getUser/" + id);
+      },
+
+
+      getRatings: function() {
+        return axios.get("/api/ratings")
+      },
+
+      createRating : function(ratingData) {
+        return axios.post("/api/postRating", ratingData)
+      },
+
+      updateRating : function(ratingData) {
+        return axios.post("/api/updateRating", ratingData)
       }
+
+      // updateRating : function() {
+        
+      // }
+
+
 
 
 }

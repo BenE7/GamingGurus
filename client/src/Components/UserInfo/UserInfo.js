@@ -2,13 +2,13 @@ import React from "react";
 import GuruRating from "../GuruRating/GuruRating.js";
 import "./UserInfo.css";
 
-const UserInfo = () =>
+const UserInfo = (props) =>
 
-  <div className="col s12">
+  <div rating={props.rating} className="col s12">
     <div id="UserInfo" className="col s12">
     <div className="col s3">
       <img id="user-pic" className="img-responsive" src="http://via.placeholder.com/150x150" />      
-      <GuruRating />
+      <GuruRating userinfo={props.userinfo}  updateRating={props.updateRating} createRating={props.createRating} />
     </div>
 
     <div className="col s3">
