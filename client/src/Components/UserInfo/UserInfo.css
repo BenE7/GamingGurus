@@ -1,5 +1,5 @@
 #UserInfo {
-  background-color: #004059;
+  background-color: rgba(0, 64, 89, .9);
   border-radius: 15px;
   border: 3px solid #5dc21e;
   
@@ -39,14 +39,13 @@
   align-items: center;
   justify-content: space-between;
   color: #d20014;
-  margin-top: 10px;
+  margin-top: 70px;
   margin-bottom: 10px;
-  font-family: 'Origicide';
+  font-family: 'Press Start 2P';
 }
 
 #dollars {
-  margin-left: 100px;
-  font-size: 100px;
+  font-size: 50px;
   align-items: center;
 }
 
