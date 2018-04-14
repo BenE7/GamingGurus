@@ -32,7 +32,7 @@ saveDate: {
 
   });
 // This creates our model from the above schema, using mongoose's model method
-var User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 User.on('index', function(error) {
     if (error) {
@@ -41,4 +41,6 @@ User.on('index', function(error) {
   });
 
 
-module.exports = {UserSchema : UserSchema , User : User}
+//module.exports = {UserSchema : UserSchema , User : User}
+
+module.exports = User;

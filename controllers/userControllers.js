@@ -1,4 +1,4 @@
-const db = require("../models/users");
+const db = require("../models");
 
 
 
@@ -11,7 +11,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  findOne : function(req,res) {
+    db.User
+    .findOne({ twitchToken: req.params.id })
+    .populate("ratings")
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
   create: function(req, res) {
+    console.log(req.body)
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))

@@ -11,7 +11,7 @@ const TopGames = props => {
                
              </h5>
            <div className="card-body">
-             <img src ={Game.game.box.small}></img>
+             <img onClick={props.boxArtVideo} name={Game.game.name} src ={Game.game.box.small}></img>
              <h5 className="card-title"> </h5>
              {Game.viewers}
            </div>

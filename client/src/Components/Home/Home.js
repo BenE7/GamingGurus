@@ -14,6 +14,7 @@ class Home extends Component {
         targetID: 'twitch-embed',
         width: '940',
         height: '480',
+        layout: '',
         channel: '',
         twitchSearch : '',
         searched : 0,
@@ -47,10 +48,16 @@ class Home extends Component {
         .then(res => { 
             console.log(res)
             console.log(res.data)
-            this.setState({  channel: res.data.streams[0].channel.display_name , searched: 0   });
+            this.setState(function(prevState, currentProps) {
+              return {
+                 channel: res.data
+              };
+            });
        // this.handleVid()
        
         })  
+
+        
     
     
           
@@ -77,6 +84,21 @@ class Home extends Component {
             .catch(err => console.log(err));
         };
         
+
+        boxArtVideo = (event) => {
+          console.log(event.target.name)
+          API.search(event.target.name)
+
+          .then(res => { 
+            console.log(res)
+            console.log(res.data)
+            this.setState({  channel: res.data.streams[0].channel.display_name , layout:'video', searched: 0,  width: '235',
+            height: '120'  });
+       // this.handleVid()
+       
+        })  
+
+        }
         
  componentDidMount() {
     this.dothing()
@@ -105,7 +127,7 @@ render() {
                     <h1 id="betheg">Be the</h1>
                     <h1 id="bethegamer">Gamer!</h1>
                     <img width="485" height="265" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
-                    <div id="inputbox" class="col-xs-3">
+                    <div id="inputbox" className="col-xs-3">
                     <Search name="twitchSearch" changeOnInput={this.handleInputChange} handleSubmit={this.handleSubmitForm}/>
                     </div>
                 </div>
@@ -114,8 +136,8 @@ render() {
                     <h1 id="bethe">Be the</h1>
                     <h1 id="betheteacher">Teacher!</h1>
                     <img width="493" height="265" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
-                    <button type="button" id="teachersignup" class="btn btn-primary">Sign Up</button>
-                    <button type="button" id="teacherlogin" class="btn btn-primary">Log In</button>
+                    <button type="button" id="teachersignup" className="btn btn-primary">Sign Up</button>
+                    <button type="button" id="teacherlogin" className="btn btn-primary">Log In</button>
                 </div>
 
                 {
@@ -123,7 +145,7 @@ render() {
                   ? <TwitchStream {...this.state} />
                   : <p>There are no results :( </p>
                   }
-                <TopGames TopGames={this.state.TopGames}/>
+                <TopGames boxArtVideo={this.boxArtVideo} TopGames={this.state.TopGames}/>
             </div>
 
         </div>
