@@ -15,7 +15,7 @@ const App = (props) =>
     <Switch>
     
    
-       <Route exact path = "/Game" component={Game} />
+       <Route exact path = "/game" component={Game} />
        <Route exact path = "/" component={Home} />
      
 

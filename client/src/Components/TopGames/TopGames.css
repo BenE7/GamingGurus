@@ -1,4 +1,38 @@
-#topgames{
+#topgames {
+    position: relative;
     margin-top: -230px;
-    margin-left: -175px;
+    margin-left: -215px;
+}
+
+#twitchgame {
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+#twitchgame:active {
+    background-color: black;
+    box-shadow: 0 5px black;
+    transform: translateY(4px);
+}
+
+.viewers {
+    margin-left: -9px;
+    color: white;
+    font-family: "Bungee Shade";
+    font-size: 14px;
+}
+
+.field-header {
+    color: #6441A4;
+    font-family: "Bungee Shade";
+}
+
+#topgametext {
+    color: white;
+    position: absolute;
+    margin-top: 25px;
+    font-family: "Bungee Shade";
+    font-size: 27px;
+    margin-top: 15px;
+    margin-left: 3px;
 }
