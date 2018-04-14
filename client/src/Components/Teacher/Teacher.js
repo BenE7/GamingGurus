@@ -85,8 +85,7 @@ componentDidMount(rating) {
     render() {
         console.log(this.state.user)
        return (
-          
-            <div>
+          <div style={{background: "url(" + process.env.PUBLIC_URL + '/assets/images/characters.png' + ") center / 100% 100% no-repeat fixed"}}>
             
                 <Nav/>
                 Teacher
