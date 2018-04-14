@@ -17,7 +17,7 @@ export default {
   },
 
   searchTop : function(){
-    return axios.get('https://api.twitch.tv/kraken/games/top?limit=5', {
+    return axios.get('https://api.twitch.tv/kraken/games/top?limit=2', {
       headers: {
         'Client-ID': 'zu8x28z97c4q9oz4xyb9i82u9l3fto'
       }

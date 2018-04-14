@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import API from "../utils/API.js";
+import "./TwitchStream.css";
+
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
 
 
 const TwitchStream=(props) => {
+  console.log(props);
   
       
  
@@ -23,8 +27,8 @@ const TwitchStream=(props) => {
     
      return (
           <div>
-            Hello {props.channel} {props.targetID} {props.width} {props.height}
-            <div className="streambox" id={props.targetID}></div>
+
+            <div className="gamepagestream" id={props.targetID}></div>
           </div>
         )
       

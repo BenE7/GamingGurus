@@ -3,23 +3,25 @@ import "./TopGames.css"
 
 const TopGames = props => {
   
-    return (
-       <div id="topgames">
-       {props.TopGames.map((Game, index) => (
-           <div key={index} className="field">
-             <h5 className="field-header">
-               {Game.game.name} 
-               
-             </h5>
-           <div className="card-body">
-             <img onClick={props.boxArtVideo} name={Game.game.name} src ={Game.game.box.small}></img>
-             <h5 className="card-title"> </h5>
-             {Game.viewers}
-           </div>
-           </div>
-         ))}
-       </div>
-     )
+
+    return <div id="topgames">
+        {props.TopGames.map((Game, index) => (
+          <div key={index} className="field">
+            <div className="card-body">
+              <img 
+                id="twitchgame"
+                onClick={props.boxArtVideo}
+                name={Game.game.name}
+                src={Game.game.box.medium}
+              />
+              <br />
+              <br />
+              <h5 className="viewers">Viewers: {Game.viewers} </h5>
+            </div>
+          </div>
+        ))}
+      </div>;
+
    
     }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Search.css"
 
 
  const Search =(props) => {
@@ -6,15 +7,15 @@ import React from "react";
     return (
       <div>
     
-      <div className="row">
-      <div className="col s6">
-        <div className="row">
-          <div className="input-field col s6">
-            <i className="material-icons prefix">textsms</i>
-            <input name={props.name}  onChange={props.changeOnInput}  {...props}type="text" id="autocomplete-input" className="autocomplete"/>
-            <label htmlFor="autocomplete-input">Autocomplete</label>
-            <button onClick={props.handleSubmit} className="btn waves-effect waves-light" type="submit" name="action">Submit
-  <i className="material-icons right">send</i>
+
+      <div class="row">
+      <div class="col s6">
+        <div class="row">
+          <div class="input-field col s6">
+            <input name={props.name}  onChange={props.changeOnInput}  {...props}type="text" id="autocomplete-input" class="autocomplete"/>
+            <button onClick={props.handleSubmit} class="btn waves-effect waves-light" type="submit" name="action">Submit
+  <i class="material-icons right">send</i>
+
 </button>
           </div>
         </div>
