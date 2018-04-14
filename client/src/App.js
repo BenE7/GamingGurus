@@ -1,17 +1,19 @@
 import React from "react";
-import {BrowserRouter as Router, Route , Switch} from "react-router-dom";
+import {Router, Route , Switch} from "react-router-dom";
 import Home from "./Components/Home/Home"
 import Teacher from "./Components/Teacher/Teacher"
 import Game from "./Components/Game/Game"
+import history from "./history"
+
 let gameBool = false;
 const App = (props) =>
-<Router>
+<Router history={history}>
 <div>
 
     <Switch>
     
    
-       <Route exact path = "/Game" component={Game} />
+       <Route exact path = "/game" component={Game} />
        <Route exact path = "/" component={Home} />
      
    

@@ -5,6 +5,7 @@ import TwitchStream from "../TwitchStream"
 import API from "../../utils/API"
 import User from "../../Components/UserInfo"
 import TopGames from "../TopGames"
+import history from "../../history"
 import "./Home.css";
 
 
@@ -30,27 +31,37 @@ class Home extends Component {
     console.log(this.state);
     this.setState({
       [name]: value,
-      channel: false
     });
   };
 
   handleSubmitForm = event => {
-    //  this.setState({  searched: 1 })
     // When the form is submitted, prevent its default behavior
     event.preventDefault();
     API.search(this.state.twitchSearch)
 
       .then(res => {
         console.log(res);
-        console.log(res.data);
+        console.log('streandd' ,res.data);
         this.setState({
           channel: res.data.streams[0].channel.display_name,
           searched: 0
+        }, () => {
+            history.push({
+              pathname: "/game",
+              state: { some: this.state }
+            });
         });
         // this.handleVid()
       })
 
-      .catch(err => console.log(err));
+    
+      .catch(err => console.log(err))
+
+    //   .then (history.push({
+    //     pathname: '/game',
+    //     state: { some: this.state }
+    //     })
+    // );
   };
 
   dothing = event => {
@@ -96,18 +107,21 @@ class Home extends Component {
     });
   }
 
+//   componentDidUpdate(){
+//       console.log('does thi get call');
+//       console.log('channel ' + this.state.channel);
+//   }
+
   render() {
     console.log(this.state.TopGames);
     return <div id="pixel">
         <div id="home">
-          <h1 id="mainhead">Genuine Game Gurus</h1>
-          <h1 id="twitchlogo">
-            <img height="200" width="200" src={process.env.PUBLIC_URL + "./assets/images/twitchlogo.png"} />
-          </h1>
-          <h1 id="mainlogo">
-            <img height="200" width="250" src={process.env.PUBLIC_URL + "./assets/images/logo2.png"} />
-          </h1>
-          <h1 id="topgametext">Top Games</h1>
+            <div id="mainheadcontainer">
+                <h1 id="mainhead">Genuine Game Gurus</h1>
+                <h1 id="subhead">Powered by Twitch</h1>
+          </div>
+          <h1 id="twitchbadge"><img height="130" width="130" src="./assets/images/twitchbadge.png"/></h1>
+          <h1 id="thecontroller"><img height="400" width="400" src="./assets/images/classiccontroller.png"/></h1>
           <div id="wrapper" className="container">
             <div className="row">
               <div className="col s12">
@@ -117,6 +131,7 @@ class Home extends Component {
                   <img id="mario" width="495" height="265" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
                   <div id="buttonsdiv" />
                 </div>
+                <hr/>
 
                 <div className="col s6">
                   <h1 id="betheg">Be the</h1>
@@ -128,10 +143,6 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="streambox">
-            {this.state.channel ? <TwitchStream {...this.state} /> : <p />}
-            </div>
-            <TopGames boxArtVideo={this.boxArtVideo} TopGames={this.state.TopGames} />
           </div>
         </div>
       </div>;

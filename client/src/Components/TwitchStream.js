@@ -7,6 +7,7 @@ const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
 
 const TwitchStream=(props) => {
+  console.log(props);
   
       
  
@@ -30,7 +31,7 @@ const TwitchStream=(props) => {
     
         return (
           <div>
-            <div id={props.targetID}></div>
+            <div className="gamepagestream" id={props.targetID}></div>
           </div>
         )
       

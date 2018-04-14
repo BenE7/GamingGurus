@@ -1,0 +1,13 @@
+#pagewrapper{
+    background: url("./purplebackground.jpg");
+    height: 900px;
+    
+}
+
+#thetwitchbox{
+    position: absolute;
+    height: 490px;
+    width: 950px;
+    border: 1px solid black;
+    margin-left: 250px;
+}

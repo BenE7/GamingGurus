@@ -1,19 +1,26 @@
 import React, { Component } from "react";
 import Nav from "../Nav"
 import TwitchStream from "../TwitchStream"
+import "./Game.css"
 
 class Game extends Component {
-render() {
+render(some) {
+    console.log(this.props.location.state.some);
    return (
+    <div id="pagewrapper">
       <div>
       <Nav/>
+
+      <div id="thetwitchbox">
+      </div>
  
-       Game
+       <TwitchStream {...this.props.location.state.some}/>
       
 
        </div>
+       </div>
        
       );
-    }
+    };
 }
     export default Game;

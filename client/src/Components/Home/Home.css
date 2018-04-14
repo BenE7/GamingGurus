@@ -1,13 +1,21 @@
 html {
-    background-color: #004059;
+    background-color: #000000;
 }
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-left: -58px;
+    margin-top: -100px;
+}
+
 
 #home {
     z-index: 0;
-    background-image: url("./controller.jpg");
-    height: 800px;
-    width: auto;
-    background-position: 2240px 1505px;
+    background-image: url("./mixed.jpg");
+    height: 830px;
+    position: relative;
 }
 
 #pixel {
@@ -15,12 +23,22 @@ html {
 }
 
 #mainhead {
-    margin-top: 40px;
-    margin-left: 15.2%;
+    margin-top: 30px;
+    margin-left: 11%;
     font-family: "Bungee Shade";
-    font-size: 70px;
+    font-size: 59px;
     color: white;
     text-shadow: 2px 1px black;
+    position: absolute;
+}
+
+#subhead {
+    font-family: "Bungee Shade";
+    font-size: 20px;
+    color: #6441A4;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 162px;
 }
 
 #wrapper {
@@ -28,10 +46,11 @@ html {
     float: left;
     height: 265px;
     width: 980px;
-    margin-top: 75px;
-    margin-left: 14.5%;
+    margin-top: 200px;
+    margin-left: 200px;
     box-shadow: 5px 5px 5px 5px black;
     background: linear-gradient(to right, #004059, #6441A4);
+    z-index: 1;
 }
 
 #mainbox {
@@ -51,7 +70,7 @@ html {
 #inputbox {
     position: absolute;
     margin-top: -91px;
-    margin-left: 20px;
+    margin-left: 10px;
     z-index: 0;
 }
 
@@ -65,20 +84,6 @@ html {
     position: relative;
     right: -470px;
     top: -245px;
-}
-
-#teachersignup {
-    border: 1px solid #6441A4;
-    background-color: #1E2D26;
-    margin-top: 190px;
-    margin-left: -250px;
-}
-
-#teacherlogin {
-    border: 1px solid #6441A4;
-    background-color: #1E2D26;
-    margin-top: 190px;
-    margin-left: 40px;
 }
 
 #bethe {
@@ -121,13 +126,6 @@ html {
     margin-left: 28px;
 }
 
-/* .card {
-  background-color: #004059;
-  margin-top: 320px;
-  width: 240px;
-  position: absolute;
-  box-shadow: 5px 5px 5px 5px black;
-} */
 
 #teachertext {
     font-family: "Bungee Shade";
@@ -143,19 +141,20 @@ html {
     background-color: #004059;
 }
 
-#mainlogo {
-    margin-top: -140px;
-    margin-left: -25px;
-    transform: rotate(-1deg);
-    position: absolute;
-}
 
 #search {
     margin-top: -50px;
 }
 
-#twitchlogo {
+
+#twitchbadge {
     position: absolute;
-    margin-top: -129px;
-    margin-left: 1229px;
+    margin-top: 28px;
+    margin-left: 27px;
+}
+
+#thecontroller {
+    position: absolute;
+    margin-left: 479px;
+    margin-top: 350px;
 }
