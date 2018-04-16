@@ -9,7 +9,7 @@ class Faves extends Component {
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <a href="https://www.rocketleague.com/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA"/>    <span className="card-title home">Rocket League</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA" alt="game art"/>    <span className="card-title home">Rocket League</span>
               </a>
             </div>
           </div>
@@ -19,7 +19,7 @@ class Faves extends Component {
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <a href="https://www.rocketleague.com/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA"/>    <span className="card-title home">Rocket League</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA"alt="game art"/>    <span className="card-title home">Rocket League</span>
               </a>
             </div>
           </div>
@@ -29,7 +29,7 @@ class Faves extends Component {
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <a href="https://www.rocketleague.com/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA"/>    <span className="card-title home">Rocket League</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA" alt="game art"/>    <span className="card-title home">Rocket League</span>
               </a>
             </div>
           </div>
@@ -39,7 +39,7 @@ class Faves extends Component {
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <a href="https://www.rocketleague.com/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA"/>    <span className="card-title home">Rocket League</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZWhzJeOEm_7G6oc0fzY8eFj33YwpOWrS5tXTFCZD2kBHTVnjaA" alt="game art"/>    <span className="card-title home">Rocket League</span>
               </a>
             </div>
           </div>

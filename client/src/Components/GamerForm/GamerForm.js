@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import Select from "../Select/Select";
 import SingleInput from "../SingleInput/SingleInput";
 import TextArea from "../TextArea/TextArea";
 import CheckboxOrRadioGroup from "../CheckboxOrRadioGroup/CheckboxOrRadioGroup";
+import API from "../../utils/API";
+import history from "../../history";
 import "./GamerForm.css";
 
 class GamerForm extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
+      twitchToken: this.props.location.state.twitchToken,
+      guru: this.props.location.state.guru,
       xbox: '',
       ps: '',
       steam: '',
@@ -17,15 +20,10 @@ class GamerForm extends Component {
       achieve1: '',
       achieve2: '',
       achieve3: '',
-      bio:''
-      // selectedPets: [],
-			// ageOptions: [],
-			// ownerAgeRangeSelection: '',
-			// siblingOptions: [],
-			// siblingSelection: [],
-			// currentPetCount: 0,
-			// description: ''
-		};
+      bio:'',
+      rate:''
+    };
+    
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleXboxChange = this.handleXboxChange.bind(this);
@@ -34,15 +32,16 @@ class GamerForm extends Component {
     this.handleAchieve1Change = this.handleAchieve1Change.bind(this);
     this.handleAchieve2Change = this.handleAchieve2Change.bind(this);
     this.handleAchieve3Change = this.handleAchieve3Change.bind(this);
-		// this.handleFullNameChange = this.handleFullNameChange.bind(this);
-		// this.handleCurrentPetCountChange = this.handleCurrentPetCountChange.bind(this);
-		// this.handleGuruSelect = this.handleGuruSelect.bind(this);
+    this.handleRateChange = this.handleRateChange.bind(this);
     this.handleGameSelection = this.handleGameSelection.bind(this);
     this.handleBioChange= this.handleBioChange.bind(this);
-		// this.handleSiblingsSelection = this.handleSiblingsSelection.bind(this);
-		// this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
   }
   
+  componentDidMount() {
+    console.log("twitch", this.state.twitchToken)
+    console.log("guru", this.state.guru)
+    API.findUser(this.state.twitchToken);
+  }
   //*NEED TO SET UP ROUTE TO API
   
   // componentDidMount() {
@@ -83,7 +82,11 @@ class GamerForm extends Component {
   
   handleAchieve3Change(e) {
 		this.setState({ achieve3: e.target.value }, () => console.log('achieve3:', this.state.achieve3));
-	}
+  }
+  
+  handleRateChange(e) {
+    this.setState({ rate: e.target.value }, () => console.log('rate:', this.state.rate));
+  }
 
 	handleGameSelection(e) {
     console.log(e)
@@ -118,29 +121,37 @@ class GamerForm extends Component {
       achieve1: '',
       achieve2: '',
       achieve3: '',
-      bio: ''
+      bio: '',
+      rate: ''
 		});
 	}
 	handleFormSubmit(e) {
 		e.preventDefault();
 
 		const formPayload = {
-			xbox: this.state.xbox,
-      ps: this.state.ps,
-      steam: this.state.steam,
-      selectedGames: this.state.selectedGames,
-      achieve1: this.state.achieve1,
-      achieve2: this.state.achieve2,
-      achieve3: this.state.achieve3,
-      bio: this.state.bio
+      guru: this.state.guru,
+			xbox: this.state.xbox || "",
+      ps: this.state.ps || "",
+      steam: this.state.steam || "",
+      selectedGames: this.state.selectedGames || "",
+      achieve1: this.state.achieve1 || "",
+      achieve2: this.state.achieve2 || "",
+      achieve3: this.state.achieve3 || "",
+      bio: this.state.bio || "",
+      rate: this.state.rate || ""
     };
 
-		console.log('Send this in a POST request:', formPayload);
-		this.handleClearForm(e);
-  }
-  render() {
+    API.updateUser(this.state.twitchToken, formPayload)
+    .then(() => {
+      history.push({
+        pathname: "/teacher",
+        state: { twitchToken: this.state.twitchToken }
+      })
+  })
+}
+  render(twitchToken) {
     return (
-      <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + '/assets/images/logo.gif' + ") top center / 25% 50% no-repeat", minHeight : "680px"}}>
+      <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "680px"}}>
         <form id="gamer" style={{fontFamily:"Press Start 2P", fontSize:"20px", padding: "10px",textAlign: "center", position: "absolute", height: "100%", width:"90%", top:"50%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
             <div className="row">
             <div className="game-form col s4">
@@ -206,6 +217,18 @@ class GamerForm extends Component {
             controlFunc={this.handleBioChange}
             placeholder={''} />
           </div>
+          {this.state.guru===true &&
+            <div className="rate-schedule">
+            <SingleInput
+            inputType={'number'}
+            title={'Hourly rate'}
+            name={'rate'}
+            controlFunc={this.handleRateChange}
+            content={this.state.rate}
+            placeholder={'$'} /> 
+            <span id="schedule"><img className="img-responsive calendar" alt="calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} /></span>
+            </div>
+          }
           <div className="button-div">
           <input
             type="submit"

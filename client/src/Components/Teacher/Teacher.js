@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Nav from "../Nav";
 import UserInfo from "../UserInfo";
 import Bio from "../Bio";
 import API from "../../utils/API";
@@ -85,10 +84,8 @@ componentDidMount(rating) {
     render() {
         console.log(this.state.user)
        return (
-          <div style={{background: "url(" + process.env.PUBLIC_URL + '/assets/images/characters.png' + ") center / 100% 100% no-repeat fixed"}}>
-            
-                <Nav/>
-                Teacher
+          <div style={{ paddingTop: "10px", paddingBottom:"50px",background: "url(" + process.env.PUBLIC_URL + "/assets/images/characters.png) center / 100% 100% no-repeat fixed"}}>
+            <h1 id="profile-header" style={{textAlign:"center", fontFamily:"Bungee Shade", color:"white", textShadow: "2px 1px black", margin: "10px auto 50px auto"}}>Profile</h1>
                  <div className="container">
                     <div className="row">
                         <UserInfo userinfo={this.state.user}  updateRating={this.updateRating} createRating={this.createRating} />

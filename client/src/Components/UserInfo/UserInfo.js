@@ -4,18 +4,18 @@ import "./UserInfo.css";
 
 const UserInfo = (props) =>
 
-  <div rating={props.rating} className="col s12">
+  <div rating="" className="col s12">
     <div id="UserInfo" className="col s12">
     <div className="col s3">
-      <img id="user-pic" className="img-responsive" src="http://via.placeholder.com/150x150" />      
-      <GuruRating userinfo={props.userinfo}  updateRating={props.updateRating} createRating={props.createRating} />
+      <img id="user-pic" className="img-responsive" src="http://via.placeholder.com/150x150" alt="user" />      
+      <GuruRating userinfo=""  updateRating="" createRating="" />
     </div>
 
     <div className="col s3">
       <div id="gamertags">        
-          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/xbox.gif"} />Xbox GT</span>
-          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/playstation.png"} />Play Station GT</span>
-          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/steam.png"} />Steam GT</span>
+          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/xbox.gif"} alt="xbox symbol" />Xbox GT</span>
+          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/playstation.png"} alt="playstation symbol" />Play Station GT</span>
+          <span className="gt"><img className="img-responsive gt-pic" src={process.env.PUBLIC_URL + "/assets/images/steam.png"} alt="steam symbol" />Steam GT</span>
       </div>
     </div>
     <div id="rate" className="col s2 offset-s1">
@@ -23,7 +23,7 @@ const UserInfo = (props) =>
       <span id="per">per hour</span>
     </div>
     <div className="col s2 offset-s1">
-      <span id="schedule"><img className="img-responsive calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} /></span>
+      <span id="schedule"><img className="img-responsive calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} alt="calendar icon" /></span>
     </div>
     </div>
   </div>;
