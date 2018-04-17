@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CheckboxOrRadioGroup from "../CheckboxOrRadioGroup/CheckboxOrRadioGroup";
-import API from "../../utils/API";
 import "./YouAGuru.css";
 import history from "../../history";
 
@@ -17,7 +16,7 @@ class YouAGuru extends Component {
   handleGuruSelect(e) {
     let formPayload;
     this.setState({typeOfUser : e.target.value } , () =>{
-      if (this.state.typeOfUser.split("")[0] == "B") {
+      if (this.state.typeOfUser.split("")[0] === "B") {
         formPayload = {
           guru: true
         };

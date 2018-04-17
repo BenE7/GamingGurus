@@ -16,7 +16,7 @@ class GamerForm extends Component {
       ps: '',
       steam: '',
       selectedGames: [],
-      gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "League of Legends"],
+      gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "DOTA 2", "Counter Strike Global Offensive"],
       achieve1: '',
       achieve2: '',
       achieve3: '',
@@ -42,24 +42,7 @@ class GamerForm extends Component {
     console.log("guru", this.state.guru)
     API.findUser(this.state.twitchToken);
   }
-  //*NEED TO SET UP ROUTE TO API
-  
-  // componentDidMount() {
-	// 	fetch('./fake_db.json')
-	// 		.then(res => res.json())
-	// 		.then(data => {
-	// 			this.setState({
-	// 				xbox: '',
-  //         ps: '',
-  //         steam: '',
-  //         games: [],
-  //         achieve1: '',
-  //         achieve2: '',
-  //         achieve3: '',
-  //         bio: ''
-	// 			});
-	// 		});
-	// }
+
 	handleXboxChange(e) {
 		this.setState({ xbox: e.target.value }, () => console.log('xbox:', this.state.xbox));
   }
@@ -100,9 +83,7 @@ class GamerForm extends Component {
 		}
 		this.setState({ selectedGames: newSelectionArray }, () => console.log('game selection', this.state.selectedGames));
 	}
-	// handleSiblingsSelection(e) {
-	// 	this.setState({ siblingSelection: [e.target.value] }, () => console.log('siblingz', this.state.siblingSelection));
-	// }
+	
 	handleBioChange(e) {
 		const textArray = e.target.value.split('').filter(x => x !== 'e');
 		console.log('string split into array of letters',textArray);
@@ -124,7 +105,8 @@ class GamerForm extends Component {
       bio: '',
       rate: ''
 		});
-	}
+  }
+  
 	handleFormSubmit(e) {
 		e.preventDefault();
 
@@ -147,102 +129,110 @@ class GamerForm extends Component {
         pathname: "/teacher",
         state: { twitchToken: this.state.twitchToken }
       })
-  })
-}
+    })
+  }
   render(twitchToken) {
     return (
       <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "680px"}}>
         <form id="gamer" style={{fontFamily:"Press Start 2P", fontSize:"20px", padding: "10px",textAlign: "center", position: "absolute", height: "100%", width:"90%", top:"50%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
-            <div className="row">
+          <div className="row">
             <div className="game-form col s4">
-            <h6>Answer truthfully to ensure smooth transactions!</h6>
-            <SingleInput
-              inputType={'text'}
-              title={'Xbox Gamertag'}
-              name={'xbox'}
-              controlFunc={this.handleXboxChange}
-              content={this.state.xbox}
-              placeholder={"(Optional)"} />
-            <SingleInput
-              inputType={'text'}
-              title={'PS Gamertag'}
-              name={'ps'}
-              controlFunc={this.handlePSChange}
-              content={this.state.ps}
-              placeholder={"(Optional)"} />
-            <SingleInput
-              inputType={'text'}
-              title={'Steam Gamertag'}
-              name={'steam'}
-              controlFunc={this.handleSteamChange}
-              content={this.state.steam}
-              placeholder={"(Optional)"} />
-            <CheckboxOrRadioGroup
-              title={'Which games are you most interested in?'}
-              setName={'selectedGames'}
-              type={'checkbox'}
-              controlFunc={this.handleGameSelection}
-              options={this.state.gameSelections}
-              selectedOptions={this.state.selectedGames} />
-          <h6>{this.state.selectedGames}</h6>
-          </div>
-          <div className="game-form col s4 offset-s4">
-          <h6>Share 1-3 of your top video game achievements!</h6>
-          <SingleInput
-            inputType={'text'}
-            title={'Number 1'}
-            name={'achieve1'}
-            controlFunc={this.handleAchieve1Change}
-            content={this.state.achieve1}
-            placeholder={'(Optional)'} />
-          <SingleInput
-            inputType={'text'}
-            title={'Number 2'}
-            name={'achieve2'}
-            controlFunc={this.handleAchieve2Change}
-            content={this.state.achieve2}
-            placeholder={'(Optional)'} />
-          <SingleInput
-            inputType={'text'}
-            title={'Number 3'}
-            name={'achieve3'}
-            controlFunc={this.handleAchieve3Change}
-            content={this.state.achieve3}
-            placeholder={'(Optional)'} />  
-          <TextArea 
-            title={"Describe yourself briefly"}
-            rows={54}
-            content={this.state.bio}
-            name={'bio'}
-            controlFunc={this.handleBioChange}
-            placeholder={''} />
-          </div>
-          {this.state.guru===true &&
-            <div className="rate-schedule">
-            <SingleInput
-            inputType={'number'}
-            title={'Hourly rate'}
-            name={'rate'}
-            controlFunc={this.handleRateChange}
-            content={this.state.rate}
-            placeholder={'$'} /> 
-            <span id="schedule"><img className="img-responsive calendar" alt="calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} /></span>
+              <h6>Answer truthfully to ensure smooth transactions!</h6>
+              <SingleInput
+                inputType={'text'}
+                title={'Xbox Gamertag'}
+                name={'xbox'}
+                controlFunc={this.handleXboxChange}
+                content={this.state.xbox}
+                placeholder={"(Optional)"} />
+              <SingleInput
+                inputType={'text'}
+                title={'PS Gamertag'}
+                name={'ps'}
+                controlFunc={this.handlePSChange}
+                content={this.state.ps}
+                placeholder={"(Optional)"} />
+              <SingleInput
+                inputType={'text'}
+                title={'Steam Gamertag'}
+                name={'steam'}
+                controlFunc={this.handleSteamChange}
+                content={this.state.steam}
+                placeholder={"(Optional)"} />
+              <CheckboxOrRadioGroup
+                title={'Which games are you most interested in?'}
+                setName={'selectedGames'}
+                type={'checkbox'}
+                controlFunc={this.handleGameSelection}
+                options={this.state.gameSelections}
+                selectedOptions={this.state.selectedGames} />
+              {/* <div id="game-div">
+              {this.state.selectedGames[0] && <span>{this.state.selectedGames[0]}</span>}
+              {this.state.selectedGames[1] && <span>{this.state.selectedGames[1]}</span>}
+              {this.state.selectedGames[2] && <span>{this.state.selectedGames[2]}</span>}
+              {this.state.selectedGames[3] && <span>{this.state.selectedGames[3]}</span>}
+              {this.state.selectedGames[4] && <span>{this.state.selectedGames[4]}</span>}
+              </div> */}
             </div>
-          }
-          <div className="button-div">
-          <input
-            type="submit"
-            className="btn btn-primary float-right"
-            value="Submit"/>
-          <button
-            className="btn btn-link float-left"
-            onClick={this.handleClearForm}>Clear form</button> 
+            <div className="game-form col s4 offset-s4">
+              <h6>Share 1-3 of your top video game achievements!</h6>
+              <SingleInput
+                inputType={'text'}
+                title={'Number 1'}
+                name={'achieve1'}
+                controlFunc={this.handleAchieve1Change}
+                content={this.state.achieve1}
+                placeholder={'(Optional)'} />
+              <SingleInput
+                inputType={'text'}
+                title={'Number 2'}
+                name={'achieve2'}
+                controlFunc={this.handleAchieve2Change}
+                content={this.state.achieve2}
+                placeholder={'(Optional)'} />
+              <SingleInput
+                inputType={'text'}
+                title={'Number 3'}
+                name={'achieve3'}
+                controlFunc={this.handleAchieve3Change}
+                content={this.state.achieve3}
+                placeholder={'(Optional)'} />  
+              <TextArea 
+                title={"Describe yourself briefly"}
+                rows={54}
+                content={this.state.bio}
+                name={'bio'}
+                controlFunc={this.handleBioChange}
+                placeholder={''} />
+            </div>
+            {this.state.guru===true &&
+            <div className="rate-schedule">
+              <SingleInput
+                inputType={'number'}
+                title={'Hourly rate'}
+                name={'rate'}
+                controlFunc={this.handleRateChange}
+                content={this.state.rate}
+                placeholder={'$'} />
+            </div>}
+            {this.state.guru===true &&
+            <div> 
+              <span id="schedule2"><img className="img-responsive calendar" alt="calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} /></span>
+            </div>
+            }
+            <div className="button-div">
+              <input
+                type="submit"
+                className="btn btn-primary float-right"
+              value="Submit"/>
+              <button
+                className="btn btn-link float-left"
+                onClick={this.handleClearForm}>Clear form
+              </button> 
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-      
-      
+        </form>
+      </div>      
     )
   }
 }

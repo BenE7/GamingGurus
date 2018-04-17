@@ -1,8 +1,14 @@
 #UserInfo {
-  background-color: rgba(0, 64, 89, .9);
+  background-color: rgba(0,0,0, .7);
   border-radius: 15px;
   border: 3px solid #5dc21e;
-  
+}
+
+#picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 210px;
 }
 
 #user-pic {
@@ -13,6 +19,12 @@
 .gt-pic {
   height: 35px;
   width: 35px;
+}
+
+#ps {
+  width: 85px;
+  height: 55px;
+  margin-left: -25px;
 }
 
 #gamertags {

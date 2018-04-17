@@ -6,30 +6,39 @@ import API from "../../utils/API";
 
 
 class Teacher extends Component {
-    state = {
+    constructor(props) {
+    super(props);
+    this.state = {
         user: {
-            guru : '',
-            ratings: [0],
-            saveDate : '',
-            twitchToken : '',
-            _id : ''
+            twitchToken: this.props.location.state.twitchToken,
+            guru: '',
+            xbox: '',
+            ps: '',
+            steam: '',
+            selectedGames: [],
+            gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "League of Legends"],
+            achieve1: '',
+            achieve2: '',
+            achieve3: '',
+            bio:'',
+            rate:''
         }
-
     }
-
+}
     // getToke = () => {
     //     API.getloogedtoke()
     //     .then(res => this.setState({ loggedInToken : res.twitchToken}))
         
     // }
-
+componentWillMount = () => {
+    console.log(this.props.location.state.twitchToken)
+    this.loadRating();
+}
     
 loadRating = event => {
-   API.findUser('63370564282625')
-    .then(res =>{ console.log(res.data)
-    console.log('user rating on get req' , res.data.ratings[0])
-    console.log('all the user response obj', res.data)
-    this.setState(function(prevState, currentProps) {
+    console.log(this.state.twitchToken)
+   API.findUser(this.props.location.state.twitchToken)
+    .then(res =>{this.setState(function(prevState, currentProps) {
         return {
            user: res.data
         };
@@ -47,14 +56,14 @@ loadRating = event => {
 componentDidMount(rating) {
     
     // Just gets all the rating info stictly to test
-    API.getRatings()
-    .then(res => console.log('rating res' ,res))
-    this.loadRating()
+    // API.getRatings()
+    // .then(res => console.log('rating res' ,res))
+    // this.loadRating()
 
-    //API.newRating({
-       // rating : Math.floor(Math.random() * 5 + 1)
-      console.log('inside didMount create, rating or update' , this.state.user )
-      
+    // //API.newRating({
+    //    // rating : Math.floor(Math.random() * 5 + 1)
+    //   console.log('inside didMount create, rating or update' , this.state.user )
+    console.log(this.state)
       
        
        
@@ -90,7 +99,7 @@ componentDidMount(rating) {
                     <div className="row">
                         <UserInfo userinfo={this.state.user}  updateRating={this.updateRating} createRating={this.createRating} />
                     </div>
-                    <Bio />
+                    <Bio userinfo={this.state.user} />
            
                  </div>
            </div>
