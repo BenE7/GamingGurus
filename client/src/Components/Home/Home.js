@@ -3,6 +3,7 @@ import Search from "../SearchBar/Search";
 import API from "../../utils/API";
 import history from "../../history";
 import "./Home.css";
+import Checkout from "../../Checkout";
 
 
 class Home extends Component {
@@ -36,6 +37,11 @@ class Home extends Component {
                   <h1 id="betheteacher">Teacher!</h1>
                   <img id="mario" width="495" height="265" alt="mario background" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
                   <div id="buttonsdiv">
+                  <Checkout
+            name={'The Road to learn React'}
+            description={'Only the Book'}
+            amount={1}
+          />
                     <button onClick={this.buttonClick} id="placeholderbtn" className="btn waves-effect waves-light" type="submit" name="action">log in<i className="material-icons right">send</i></button>
                   </div>
                 </div>
