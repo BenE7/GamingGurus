@@ -1,11 +1,105 @@
-.streambox{
-    margin-top: 25px;
+#streambox {
+    margin-top: 100px;
     margin-left: -15px;
+    background: black;
+    box-shadow: 2px 2px 2px 2px #541e77;
+}
+
+#streamheadtext {
     position: absolute;
-    border-radius: 2px;
+    font-family: "Bungee Shade";
+    color: white;
+    margin-top: -80px;
+    margin-left: 555px;
 }
 
-.gamepagestream{
+.gamepagestream {
+    margin-top: -10px;
     margin-left: 250px;
+    border-left: 40px color black solid;
 }
 
+#stevebio {
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+#brianbio {
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+#melissabio {
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+#sanjevbio {
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+#card1 {
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 4px 4px black;
+}
+
+.card-text {
+    color: #6441A4;
+    font-family: "Bungee Shade";
+    font-size: 30px;
+    margin-top: -10px;
+    margin-left: -15px;
+}
+
+.therate {
+    position: absolute;
+    font-family: "Press Start 2P";
+    font-size: 20px;
+    color: red;
+    margin-top: -70px;
+    margin-left: 119px;
+}
+
+.perhour {
+    position: absolute;
+    font-family: "Press Start 2P";
+    font-size: 6px;
+    color: red;
+    margin-top: -45px;
+    margin-left: 130px;
+}
+
+#card2 {
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 410px;
+    box-shadow: 4px 4px 4px 4px black;
+}
+
+#card3 {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 769px;
+    box-shadow: 4px 4px 4px 4px black;
+    height: 435px;
+}
+
+#card4 {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 1115px;
+    box-shadow: 4px 4px 4px 4px black;
+    height: 435px;
+}
+
+#connect {
+    margin-top: 70px;
+    margin-left: 30px;
+}

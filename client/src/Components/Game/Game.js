@@ -9,7 +9,6 @@ render(some) {
    return (
     <div id="pagewrapper">
       <div>
-      <Nav/>
 
       <div id="thetwitchbox">
       </div>
