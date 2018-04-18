@@ -12,14 +12,49 @@ var UserSchema = new Schema({
     //dropDups: true
   },
 
- guru : {
-   type: 'Boolean',
-   default : false
- },
+  guru : {
+    type: 'Boolean',
+  },
 
-saveDate: {
+  saveDate: {
     type: 'Date',
     default: Date.now
+  },
+
+  xbox: {
+    type: 'String'
+  },
+
+  ps: {
+    type: 'String'
+  },
+
+  steam: {
+    type: 'String'
+  },
+
+  selectedGames: {
+    type: []
+  },
+
+  achieve1: {
+    type: 'String'
+  },
+
+  achieve2: {
+    type: 'String'
+  },
+
+  achieve3: {
+    type: 'String'
+  },
+
+  bio: {
+    type: 'String'
+  },
+
+  rate: {
+    type: 'Number'
   },
 
   ratings: [
@@ -30,16 +65,16 @@ saveDate: {
   ]
 
 
-  });
+});
+
 // This creates our model from the above schema, using mongoose's model method
 const User = mongoose.model("User", UserSchema);
 
 User.on('index', function(error) {
-    if (error) {
-        console.log(error);
-    }
-  });
-
+  if (error) {
+    console.log(error);
+  }
+ });
 
 //module.exports = {UserSchema : UserSchema , User : User}
 

@@ -5,7 +5,6 @@ form h6 {
 
 .game-form {
   padding:20px 30px 20px 30px !important;
-  
 }
 
 .form-group textarea {
@@ -39,4 +38,24 @@ input[type=text] {
   top:55%;
   left:50%;
   transform: translate(-50%, -50%)
+}
+
+.rate-schedule {
+  position: absolute;
+  top: 65%;
+  left: 37%;
+  width:300px;
+  display: flex;
+}
+
+#game-div {
+  display: flex;
+  font-size:12px;
+  color:#5dc21e;
+}
+
+#schedule2 {
+  position: absolute;
+  top:72%;
+  left:50%
 }

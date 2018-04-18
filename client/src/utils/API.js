@@ -6,7 +6,7 @@ let BASEURL = 'https://api.twitch.tv/kraken/search/streams?query=';
 
 export default {
   search: function(query) {
-    
+    console.log(`${BASEURL}${query}`)
     
     return axios.get(`${BASEURL}${query}`, {
       headers: {
@@ -29,7 +29,7 @@ export default {
 
       // Gets all Users
       getUsers: function() {
-        return axios.get("/api/users");
+        return axios.get("/api/users").then((response)=>console.log(response));
       },
    
       // Deletes the User with the given id
@@ -43,6 +43,10 @@ export default {
 
       findUser : function(id){
         return axios.get("/api/getUser/" + id);
+      },
+
+      updateUser: function(id, formPayload){
+        return axios.post("/api/users/" + id, formPayload)
       },
 
 

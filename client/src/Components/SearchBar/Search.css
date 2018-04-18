@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 body {
     background: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
@@ -38,7 +39,7 @@ body {
     font-size: 10px;
 }
 
-.btn {
+#playbtn {
     box-shadow: 1px 1px 1px 1px black;
     position: absolute;
     font-size: 6px;
@@ -48,7 +49,12 @@ body {
     margin-top: 75px;
 }
 
-.input-field.col.s6 {
+#gamepagesearch .input-field.col.s6 {
+    position: relative;
+    margin-left:300px;
+}
+
+#inputbox .input-field.col.s6 {
     position: relative;
     margin-top: 130px;
     margin-left: 50px;

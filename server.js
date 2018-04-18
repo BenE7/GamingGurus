@@ -7,8 +7,8 @@ const routes = require("./routes/api/routes")
 //const ratingRoutes = require("./routes/api/ratingRoutes")
 const PORT = process.env.PORT || 8080;
 
-
-
+const configRoutes = require("./routes/payment");
+configRoutes(app);
 
 // var allowCrossDomain = function(req, res, next) {
 //     res.header('Access-Control-Allow-Origin', '*');
