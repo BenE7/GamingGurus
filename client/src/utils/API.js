@@ -58,8 +58,20 @@ export default {
         return axios.post("/api/postRating", ratingData)
       },
 
-      updateRating : function(ratingData) {
-        return axios.post("/api/updateRating", ratingData)
+      updateRating : function(id, ratingData) {
+        return axios.post("/api/updateRating/" +id, ratingData)
+      },
+
+      beGuru : function(UserData) {
+        return axios.post("/api/isGuru", UserData)
+      },
+
+      getAppointments : function(appointments) {
+        return axios.get("/api/appointments" , appointments)
+      },
+
+      createAppointment : function(appointment) {
+        return axios.post("/api/appointments" , appointment)
       }
 
       // updateRating : function() {

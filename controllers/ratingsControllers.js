@@ -25,10 +25,12 @@ module.exports = {
 
     updateRating : function(req, res) {
        console.log('inside update req.body', req.body)
-         db.User
+       console.log('req params' , req.params)
+         db.Rating
+        // console.log('req.bod inside db.User' ,  req.body)
           // find one and update  twitchToken: req.body.twitchToken
-          .findOneAndUpdate({ twitchToken : 63370564282625  }, req.body)
-          .then(dbArticle => res.json(dbArticle))
+          .findOneAndUpdate({ _id : req.params.id  }, req.body)
+          .then(updatedRating => console.log('updated Rating' , updatedRating))
           .catch(err => res.status(422).json(err));
       
     },
@@ -36,7 +38,7 @@ module.exports = {
 
      
       createRating : function(req, res) {
-        console.log('line 24 req , update rating')
+        console.log('line 24 req , create  first rating')
         console.log(req.body)
         
        db.Rating
@@ -52,8 +54,8 @@ module.exports = {
         //     __v: rating2.__v
         //  }
         
-          console.log('updated rating', rating2)
-           return db.User.findOneAndUpdate({twitchToken : 63370564282625 }, { $set: { ratings: rating2._id  }})
+          console.log('creation first rating', rating2)
+           return db.User.findOneAndUpdate({_id : req.params._id }, { $set: { ratings: rating2._id  }},  { $inc: {totalRatings:1}})
           .then(function(dbUser) {
         //   // If the User was updated successfully, send it back to the client
           res.json(dbUser);
@@ -70,22 +72,3 @@ module.exports = {
   
   };
   
-
-  // app.post("/addNote", function(req, res) {
-  //   console.log('req dat bodddyy first', req.body)
-  //   var note = {
-  //       body : req.body.note
-  //   }
-  //   // Create a new Note in the database
-  //   db.Note.Note.create(note)
-  //     .then(function(dbNote) {
-  //         console.log(dbNote)
-  //         console.log('req dat bodddyy second', req.body)
-  //         console.log('dbNote', dbNote)
-  //       // If a .Note was created successfully, find one headlines (there's only one) and push the new Note's _id to the headlines's `Notes` array
-  //       // { new: true } tells the query that we want it to return the updated headline -- it returns the original by default
-  //       // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-  //       console.log("WWWWWWWW" + req.body.note);
-  //       return db.Headline.Headline.findOneAndUpdate({_id : req.body._id }, { $push: { notes: dbNote._id } }, { new: true });
-  //     })
-
