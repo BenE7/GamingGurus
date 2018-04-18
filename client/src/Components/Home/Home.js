@@ -4,22 +4,54 @@ import API from "../../utils/API";
 import history from "../../history";
 import "./Home.css";
 import Checkout from "../../Checkout";
+import { Navbar, Button } from 'react-bootstrap';
+const request = require('request');
 
 
 class Home extends Component {
-  buttonClick = () => {
-    console.log("saveUser");
-    let rando = Math.floor(Math.random() * 100000000000000 + 1);
-    API.saveUser({
-      twitchToken: rando
-    }).then(() => {
-      history.push({
-        pathname: "/youaguru",
-        state: { twitchToken: rando }
-      })
-    })
+  // buttonClick = () => {
+  //   console.log("saveUser");
+  //   let rando = Math.floor(Math.random() * 100000000000000 + 1);
+  //   API.saveUser({
+  //     twitchToken: rando
+  //   }).then(() => {
+  //     history.push({
+  //       pathname: "/youaguru",
+  //       state: { twitchToken: rando }
+  //     })
+  //   })
+  // }
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+  
+  function(accessToken, ctx, cb) {
+    request.get('https://api.twitch.tv/kraken/user', {
+      headers: {
+        'Authorization': 'OAuth ' + accessToken,
+        'Accept': 'application/vnd.twitchtv.v3+json'
+      }
+    }, function(e, r, b) {
+      if (e) return cb(e);
+      if (r.statusCode !== 200) return cb(new Error('StatusCode: ' + r.statusCode));
+      var profile = JSON.parse(b);
+      profile.id = profile._id;
+      delete profile._id;
+      profile.links = profile._links;
+      delete profile._links;
+      return cb(null, profile);
+    });
   }
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
       <div id="pixel">
         <div id="home">
@@ -42,7 +74,31 @@ class Home extends Component {
             description={'Only the Book'}
             amount={1}
           />
-                    <button onClick={this.buttonClick} id="placeholderbtn" className="btn waves-effect waves-light" type="submit" name="action">log in<i className="material-icons right">send</i></button>
+                  {
+              !isAuthenticated() && (
+                  <Button
+                    id="qsLoginBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    id="qsLogoutBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
+                    {/* <button onClick={this.buttonClick} id="placeholderbtn" className="btn waves-effect waves-light" type="submit" name="action">log in<i className="material-icons right">send</i></button> */}
                   </div>
                 </div>
                 <hr/>
