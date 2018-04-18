@@ -1,10 +1,9 @@
-#pagewrapper{
+#pagewrapper {
     background: url("./purplebackground.jpg");
-    height: 900px;
-    
+    height: 900px; 
 }
 
-#thetwitchbox{
+#thetwitchbox {
     position: absolute;
     height: 490px;
     width: 950px;

@@ -7,22 +7,21 @@ router.route("/api/users")
   .get(usersController.findAll)
   .post(usersController.create);
 
-  router.route("/api/getUser/:id")
-  .get(usersController.findOne)
+router.route("/api/users/:id")
+  .post(usersController.update);
 
-
- 
+router.route("/api/getUser/:id")
+  .get(usersController.findOne); 
 
 // Matches with "/api/ratings"
 router.route("/api/ratings")
- .get(ratingsController.findAll)
-
+ .get(ratingsController.findAll);
 
  router.route("/api/postRating")
- .post(ratingsController.createRating)
+ .post(ratingsController.createRating);
 
  router.route("/api/updateRating")
-  .post(ratingsController.updateRating)
+  .post(ratingsController.updateRating);
 
   router.route("/api/rating/:id")
  // .get(ratingsController.findOne)

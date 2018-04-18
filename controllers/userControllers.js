@@ -33,6 +33,14 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+
+  update: function(req, res) {
+    db.User
+          // find one and update  twitchToken: req.body.twitchToken
+          .findOneAndUpdate({ twitchToken : req.params.id }, req.body)
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
   }
 
    

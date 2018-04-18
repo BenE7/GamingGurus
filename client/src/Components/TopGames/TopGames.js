@@ -13,6 +13,7 @@ const TopGames = props => {
                 onClick={props.boxArtVideo}
                 name={Game.game.name}
                 src={Game.game.box.medium}
+                alt="game art"
               />
               <br />
               <br />
