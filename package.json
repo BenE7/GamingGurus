@@ -1,6 +1,6 @@
 {
   "proxy": "http://localhost:8080/",
-  "name": "nytreact",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,6 @@
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
-    "node": "8.9.2"
+    "node": "8.9.4"
   }
 }

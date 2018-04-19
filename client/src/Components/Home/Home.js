@@ -4,6 +4,7 @@ import {Button } from 'react-bootstrap';
 import "./Home.css";
 import Checkout from "../../Checkout";
 import request from "request" 
+import controller from "./controller.jpg"
 
 class Home extends Component {
   // buttonClick = () => {
