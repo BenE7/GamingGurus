@@ -17,7 +17,7 @@ class GamerForm extends Component {
       ps: '',
       steam: '',
       selectedGames: [],
-      gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "DOTA 2", "Counter Strike Global Offensive"],
+      gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "DOTA 2", "Counter Strike Global Offensive", "Halo 5"],
       achieve1: '',
       achieve2: '',
       achieve3: '',
@@ -218,11 +218,7 @@ class GamerForm extends Component {
                 content={this.state.rate}
                 placeholder={'$'} />
             </div>}
-            {this.state.guru===true &&
-            <div> 
-              <span id="schedule2"><img className="img-responsive calendar" alt="calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} /></span>
-            </div>
-            }
+            
             <div className="button-div">
               <input
                 type="submit"

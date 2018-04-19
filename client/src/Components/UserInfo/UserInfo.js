@@ -36,7 +36,6 @@ import SchedulingModal from "../SchedulerModal/SchedulerModal"
     </div>}
     {props.userinfo.guru &&
     <div className="col s2 offset-s1">
-      <span id="schedule"><img className="img-responsive calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} alt="calendar icon" /></span>
       <SchedulingModal/>
     </div>}
     </div>

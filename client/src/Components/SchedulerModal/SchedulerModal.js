@@ -21,9 +21,9 @@ export default class SchedulingModal extends React.Component {
     return (
       <div>
         
-        <button onClick={this.onOpenModal}>Open modal</button>
+        <button style={{backgroundColor:"rgba(0,0,0,.7)", border:'0px'}} onClick={this.onOpenModal}> <span id="schedule"><img className="img-responsive calendar" src={process.env.PUBLIC_URL + "/assets/images/calendar-icon.png"} alt="calendar icon" /></span></button>
         <Modal open={open} onClose={this.onCloseModal} little>
-        <Scheduler/>
+        <Scheduler onClose={this.onCloseModal}/>
         </Modal>
       </div>
     );
