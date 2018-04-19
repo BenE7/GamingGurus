@@ -32,7 +32,7 @@ class Home extends Component {
   }
 
   function(accessToken, ctx, cb) {
-    console.log("fuckyou")
+    console.log("fudgeyou")
     request.get('https://api.twitch.tv/kraken/user', {
       headers: {
         'Authorization': 'OAuth ' + accessToken,
