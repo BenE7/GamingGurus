@@ -39,7 +39,10 @@ componentWillMount = () => {
     
 loadRating = event => {
    // console.log(this.state.twitchToken)
-   API.findUser('63370564282625')
+   API.findUser('92668441312647')
+   
+   // local twitchToke
+   //63370564282625 
        //this.props.location.state.twitchToken)
     .then(res =>{this.setState(function(prevState, currentProps) {
         return {
@@ -61,7 +64,7 @@ componentDidMount(rating) {
     // Just gets all the rating info stictly to test
     // API.getRatings()
     // .then(res => console.log('rating res' ,res))
-    // this.loadRating()
+     this.loadRating()
 
     // //API.newRating({
     //    // rating : Math.floor(Math.random() * 5 + 1)
