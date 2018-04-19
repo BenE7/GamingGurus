@@ -57,7 +57,6 @@ class Search extends Component {
               <div className="input-field col s6">
                 <input name="twitchSearch"  onChange={this.handleInputChange}  type="text" id="autocomplete-input" className="autocomplete"/>
                 <button onClick={this.handleSubmitForm} id="playbtn" className="btn waves-effect waves-light" type="submit" name="action">Submit
-                  <i className="material-icons right">send</i>
                 </button>
               </div>
             </div>
