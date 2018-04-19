@@ -112,7 +112,7 @@ componentDidMount(rating) {
                     <div className="row">
                         <UserInfo userinfo={this.state.user}  updateRating={this.updateRating} createRating={this.createRating} ratingId={this.state.ratingId} />
                     </div>
-                   
+                    <Bio userinfo={this.state.user} />
            
                  </div>
            </div>
