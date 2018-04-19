@@ -129,12 +129,14 @@ export default class App extends Component {
       email: this.state.email,
       phone: this.state.phone
     }
-    API.createAppointment(appointment)
-    .then(response => this.setState({ confirmationSnackbarMessage: "Appointment succesfully added!", confirmationSnackbarOpen: true, processed: true }))
-    .catch(err => {
-      console.log(err)
-      return this.setState({ confirmationSnackbarMessage: "Appointment failed to save.", confirmationSnackbarOpen: true })
-    })
+    this.setState({ confirmationModalOpen : false})
+    this.props.onClose();
+    // API.createAppointment(appointment)
+    // .then(response => this.setState({ confirmationSnackbarMessage: "Appointment succesfully added!", confirmationSnackbarOpen: true, processed: true, confirmationModalOpen : false }))
+    // .catch(err => {
+    //   console.log(err)
+    //   return this.setState({ confirmationSnackbarMessage: "Appointment failed to save.", confirmationSnackbarOpen: true })
+    // })
   
   }
 
@@ -230,7 +232,7 @@ export default class App extends Component {
         primary={true}
         onClick={() => this.handleSubmit()} />
     ]
-   // console.log(data)
+   console.log(data)
     return (
      
         

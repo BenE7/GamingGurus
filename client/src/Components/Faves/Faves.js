@@ -69,6 +69,17 @@ class Faves extends Component {
           </div>
         </div>
       }
+      {this.props.userinfo.selectedGames && this.props.userinfo.selectedGames.indexOf("Halo 5") > -1 &&
+        <div className="col s12 m6">
+          <div className="card">
+            <div className="card-image waves-effect waves-block waves-light">
+              <a rel="noopener noreferrer" target="_blank" href="https://www.halowaypoint.com/en-US/games/halo-5-guardians">
+                <img style={{height:"101.95px"}} src="https://image.halocdn.com/?path=https:%2F%2Fcontent.halocdn.com%2Fmedia%2FDefault%2Fgames%2Fhalo-5-guardians%2Fheroes%2Fhalo5-large-hero-1920x675-de822bb343a84943a22b87d95f95cd7c.jpg&leftCrop=400&rightCrop=400&hash=zWftjFsm38xGdJo8FYCTLBpPmf4cS4Siw0CdMem%2FFR8%3D" alt="game art"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
       </div>
       
     )
