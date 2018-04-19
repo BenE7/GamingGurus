@@ -3,7 +3,7 @@ import Rating from 'react-rating-system';
 import "./GuruRating.css";
 
 const GuruRating =(props) => {
-  if (props.userinfo) {
+  if (props.userinfo && props.userinfo.ratings && props.userinfo.ratings.length > 1) {
   let totalRatings = props.userinfo.ratings[0].totalRatings
   let currentRating = props.userinfo.ratings[0].rating
   console.log('total ratings', totalRatings , 'current rate' , currentRating)

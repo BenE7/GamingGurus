@@ -10,8 +10,9 @@ class GamerForm extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      twitchToken: this.props.location.state.twitchToken,
+      username: this.props.location.state.username,
       guru: this.props.location.state.guru,
+      picture: this.props.location.state.picture,
       xbox: '',
       ps: '',
       steam: '',
@@ -38,9 +39,9 @@ class GamerForm extends Component {
   }
   
   componentDidMount() {
-    console.log("twitch", this.state.twitchToken)
+    console.log("twitch", this.state.username)
     console.log("guru", this.state.guru)
-    API.findUser(this.state.twitchToken);
+    API.findUser(this.state.username);
   }
 
 	handleXboxChange(e) {
@@ -111,6 +112,8 @@ class GamerForm extends Component {
 		e.preventDefault();
 
 		const formPayload = {
+      username: this.state.username,
+      picture: this.state.picture,
       guru: this.state.guru,
 			xbox: this.state.xbox || "",
       ps: this.state.ps || "",
@@ -123,15 +126,15 @@ class GamerForm extends Component {
       rate: this.state.rate || ""
     };
 
-    API.updateUser(this.state.twitchToken, formPayload)
+    API.saveUser(formPayload)
     .then(() => {
       history.push({
         pathname: "/teacher",
-        state: { twitchToken: this.state.twitchToken }
+        state: { username: this.state.username }
       })
     })
   }
-  render(twitchToken) {
+  render(username) {
     return (
       <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "680px"}}>
         <form id="gamer" style={{fontFamily:"Press Start 2P", fontSize:"20px", padding: "10px",textAlign: "center", position: "absolute", height: "100%", width:"90%", top:"50%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>

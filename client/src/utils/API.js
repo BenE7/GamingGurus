@@ -1,4 +1,5 @@
 import axios from "axios";
+import request from "request"
 // const qs = require('qs');
 let BASEURL = 'https://api.twitch.tv/kraken/search/streams?query=';
 //let BASEURL = 'https://api.twitch.tv/helix/streams/?game=';
@@ -25,7 +26,24 @@ export default {
 
   },
 
-
+  getTwitchLogIn : function(accessToken, ctx, cb) {
+    request.get('https://api.twitch.tv/kraken/user', {
+      headers: {
+        'Authorization': 'OAuth ' + accessToken,
+        'Accept': 'application/vnd.twitchtv.v3+json',
+        'Client-ID':'q1m75qqduluurj17mc4sxz1w8y9kuo'
+      }
+    }, function(e, r, b) {
+      if (e) return cb(e);
+      if (r.statusCode !== 200) return cb(new Error('StatusCode: ' + r.statusCode));
+      var profile = JSON.parse(b);
+      profile.id = profile._id;
+      delete profile._id;
+      profile.links = profile._links;
+      delete profile._links;
+      return cb(null, profile);
+    });
+  },
 
       // Gets all Users
       getUsers: function() {

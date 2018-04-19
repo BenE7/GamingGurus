@@ -21,11 +21,11 @@ const App = (props) =>
   <Router history={history}>
     <div style={{height:"100%"}}>
       <Switch>
-<Route exact path = "/game" render={(props) => <Game auth={auth} {...props} />} />
+        <Route exact path = "/game" render={(props) => <Game auth={auth} {...props} />} />
         <Route exact path = "/" render={(props) => <Home auth={auth} {...props} />} />
         <Route exact path = "/teacher" render={(props) => <Teacher auth={auth} {...props} />} />
         <Route exact path = "/youaguru" render={(props) => <YouAGuru auth={auth} {...props} />}/>
-        <Route exact path = "/infoform" render={(props) => <Game auth={auth} {...props} />} />
+        <Route exact path = "/infoform" render={(props) => <GamerForm auth={auth} {...props} />} />
         <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 

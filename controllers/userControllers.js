@@ -13,7 +13,7 @@ module.exports = {
 
   findOne : function(req,res) {
     db.User
-    .findOne({ twitchToken: req.params.id })
+    .findOne({ username: req.params.id })
     .populate("ratings")
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
@@ -38,7 +38,7 @@ module.exports = {
   update: function(req, res) {
     db.User
           // find one and update  twitchToken: req.body.twitchToken
-          .findOneAndUpdate({ twitchToken : req.params.id }, req.body)
+          .findOneAndUpdate({ username : req.params.id }, req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
   }

@@ -31,10 +31,10 @@ const TwitchStream=(props) => {
          </div>
 
          <div id="connect">
-           <div id="card1" class="card" style={{ width: 202 }}>
-             <img class="card-img-top" src={BensPic} style={{ width: 200 }} alt="Card image cap" />
+           <div id="card1" className="card" style={{ width: 202 }}>
+             <img className="card-img-top" src={BensPic} style={{ width: 200 }} alt="Card cap" />
              <div className="card-body" style={{ width: 200 }}>
-               <p class="card-text">Steve</p>
+               <p className="card-text">Steve</p>
 
                <p className="therate">$50</p>
                <p className="perhour">per hour</p>
@@ -50,10 +50,10 @@ const TwitchStream=(props) => {
              </div>
            </div>
 
-           <div id="card2" class="card" style={{ width: 202 }}>
-             <img class="card-img-top" src={Coach2} style={{ width: 200 }} alt="Card image cap" />
-             <div class="card-body" style={{ width: 200 }}>
-               <p class="card-text">Brian</p>
+           <div id="card2" className="card" style={{ width: 202 }}>
+             <img className="card-img-top" src={Coach2} style={{ width: 200 }} alt="Card cap" />
+             <div className="card-body" style={{ width: 200 }}>
+               <p className="card-text">Brian</p>
 
                <p className="therate">$35</p>
                <p className="perhour">per hour</p>
@@ -69,10 +69,10 @@ const TwitchStream=(props) => {
              </div>
            </div>
 
-           <div id="card3" class="card" style={{ width: 202 }}>
-             <img class="card-img-top" src={Coach3} style={{ width: 200 }} alt="Card image cap" />
-             <div class="card-body" style={{ width: 200 }}>
-               <p class="card-text">Sara</p>
+           <div id="card3" className="card" style={{ width: 202 }}>
+             <img className="card-img-top" src={Coach3} style={{ width: 200 }} alt="Card cap" />
+             <div className="card-body" style={{ width: 200 }}>
+               <p className="card-text">Sara</p>
 
                <p className="therate">$20</p>
                <p className="perhour">per hour</p>
@@ -88,10 +88,10 @@ const TwitchStream=(props) => {
              </div>
            </div>
 
-           <div id="card4" class="card" style={{ width: 202 }}>
-             <img class="card-img-top" src={Coach4} style={{ width: 200 }} alt="Card image cap" />
-             <div class="card-body" style={{ width: 200 }}>
-               <p class="card-text">Saji</p>
+           <div id="card4" className="card" style={{ width: 202 }}>
+             <img className="card-img-top" src={Coach4} style={{ width: 200 }} alt="Card cap" />
+             <div className="card-body" style={{ width: 200 }}>
+               <p className="card-text">Saji</p>
 
                <p className="therate">$20</p>
                <p className="perhour">per hour</p>

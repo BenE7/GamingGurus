@@ -1,7 +1,7 @@
 import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
-
+import API from '../utils/API'
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -9,7 +9,7 @@ export default class Auth {
     redirectUri: AUTH_CONFIG.callbackUrl,
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile channel_read'
   });
 
   constructor() {
@@ -23,10 +23,27 @@ export default class Auth {
     this.auth0.authorize();
   }
 
+  sendNextPage(res, name, pic ) {
+    console.log(res)
+    if (res.data && res.data.username) {
+      history.push({
+        pathname: "/teacher",
+        state: {username: name }
+    })
+    } else {
+      history.push({
+        pathname: "/youaguru",
+        state: {username: name, picture: pic }
+    })
+  }}
+
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
+        this.setSession(authResult)
+        console.log(authResult)
+        API.findUser(authResult.idTokenPayload.name)
+        .then(res=>this.sendNextPage(res, authResult.idTokenPayload.name, authResult.idTokenPayload.picture));
         history.replace('/');
       } else if (err) {
         history.replace('/');
@@ -38,12 +55,12 @@ export default class Auth {
 
   setSession(authResult) {
     // Set the time that the access token will expire at
+    console.log(authResult)
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-    // navigate to the home route
-    history.replace('/');
+    
   }
 
   logout() {
@@ -62,3 +79,4 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 }
+
