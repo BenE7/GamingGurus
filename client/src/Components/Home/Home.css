@@ -19,11 +19,10 @@ hr {
     margin-top: -100px;
 }
 
-
 #home {
     z-index: 0;
     background-image: url("./mixed.jpg");
-    height: 830px;
+    height: 990px;
     position: relative;
 }
 
@@ -79,7 +78,7 @@ hr {
 #inputbox {
     position: absolute;
     margin-top: -91px;
-    margin-left: 10px;
+    margin-left: -10px;
     z-index: 0;
 }
 
@@ -135,7 +134,6 @@ hr {
     margin-left: 28px;
 }
 
-
 #teachertext {
     font-family: "Bungee Shade";
     font-size: 17px;
@@ -150,11 +148,9 @@ hr {
     background-color: #004059;
 }
 
-
 #search {
     margin-top: -50px;
 }
-
 
 #twitchbadge {
     position: absolute;
@@ -164,6 +160,16 @@ hr {
 
 #thecontroller {
     position: absolute;
-    margin-left: 350px;
-    margin-top: 400px;
+    margin-left: 160px;
+    margin-top: 370px;
+}
+
+#searchyourstream {
+    position: absolute;
+    font-family: "Bungee Shade";
+    font-size: 20px;
+    margin-top: 323px;
+    margin-left: 375px;
+    color: #6441A4;
+    z-index: 1;
 }

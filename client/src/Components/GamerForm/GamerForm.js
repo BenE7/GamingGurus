@@ -136,8 +136,8 @@ class GamerForm extends Component {
   }
   render(username) {
     return (
-      <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "680px"}}>
-        <form id="gamer" style={{fontFamily:"Press Start 2P", fontSize:"20px", padding: "10px",textAlign: "center", position: "absolute", height: "100%", width:"90%", top:"50%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
+      <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "680px", marginTop : "80px"}}>
+        <form id="gamer" style={{fontFamily:"Press Start 2P", fontSize:"20px", padding: "10px",textAlign: "center", position: "absolute", height: "75%", width:"90%", top:"50%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
           <div className="row">
             <div className="game-form col s4">
               <h6>Answer truthfully to ensure smooth transactions!</h6>
