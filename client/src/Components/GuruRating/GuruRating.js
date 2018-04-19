@@ -15,7 +15,7 @@ const GuruRating =(props) => {
                 image={process.env.PUBLIC_URL + "/assets/images/mario-rating3.png"} 
                 userinfo={props.userinfo}
                 initialBG="#000000" 
-                initialValue={ ( props.userinfo.ratings[0]) ? props.userinfo.ratings[0].rating : ''} 
+                initialValue={ ( props.userinfo.ratings[0]) ? props.userinfo.ratings[0].rating : 5} 
                 fillBG="#d20014" 
                 containerStyle={{maxWidth: '200px', maxHeight: "50px"}}
                 callback={(index) =>   ( props.userinfo.ratings[0]) ? props.updateRating(currentRating , totalRatings , index) : props.createRating(index)   }

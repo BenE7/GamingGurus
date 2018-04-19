@@ -20,7 +20,7 @@ export default class SchedulingModal extends React.Component {
     const { open } = this.state;
     return (
       <div>
-      
+        
         <button onClick={this.onOpenModal}>Open modal</button>
         <Modal open={open} onClose={this.onCloseModal} little>
         <Scheduler/>

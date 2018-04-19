@@ -76,7 +76,8 @@ componentDidMount(rating) {
     }
 
    createRating = (newRating) =>{
-    API.createRating({
+    console.log(this.state.user.twitchToken)
+    API.createRating(this.state.user.twitchToken, {
         rating : newRating
          })
       console.log(`rating of ${newRating} created`)
@@ -88,16 +89,16 @@ componentDidMount(rating) {
     updateRating = ( currentRating, totalRatings, clickValue) =>{
         console.log('state of thing')
         console.log('total ratings', totalRatings , 'current rate' , currentRating, 'click', clickValue)
-       let newRating =  ((((currentRating * totalRatings) + clickValue)  / (totalRatings + 1) * 100 ) / 100)
+       let updatedRating =  ((((currentRating * totalRatings) + clickValue)  / (totalRatings + 1) * 1 ) / 1).toFixed(2)
        let newTotalRating = this.state.user.ratings[0].totalRatings + 1
        console.log('new total raitngs' , newTotalRating)
-       console.log('new rating', newRating)
+       console.log('new rating', updatedRating)
        API.updateRating(this.state.user.ratings[0]._id , {
          
-         rating : newRating,
+         rating : updatedRating,
          totalRatings : newTotalRating
        })
-      console.log(`rating updated rating now ${newRating}`)
+      console.log(`Rating has now been updated to ${updatedRating}, and the total ratings this user recieved are ${newTotalRating}`)
     }
     
 

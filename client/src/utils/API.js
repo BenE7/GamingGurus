@@ -54,8 +54,8 @@ export default {
         return axios.get("/api/ratings")
       },
 
-      createRating : function(ratingData) {
-        return axios.post("/api/postRating", ratingData)
+      createRating : function( id , ratingData) {
+        return axios.post("/api/postRating/" + id, ratingData)
       },
 
       updateRating : function(id, ratingData) {

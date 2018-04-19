@@ -283,7 +283,7 @@ export default class App extends Component {
               linear={false}
               orientation="vertical">
               <Step disabled={loading}>
-                <StepButton onClick={() => this.setState({ stepIndex: 0 })}>
+                <StepButton onClick={() => this.setState({ stepIndex: 1 })}>
                   Choose an available day for your appointment
                 </StepButton>
                 <StepContent>
@@ -302,32 +302,9 @@ export default class App extends Component {
               </Step>
               <Step disabled={ !data.appointmentDate }>
                 <StepButton onClick={() => this.setState({ stepIndex: 1 })}>
-                  Choose an available time for your appointment
+                
                 </StepButton>
-                <StepContent>
-                  <SelectField
-                    floatingLabelText="AM or PM"
-                    value={data.appointmentMeridiem}
-                    onChange={(evt, key, payload) => this.handleSetAppointmentMeridiem(payload)}
-                    selectionRenderer={value => value ? 'PM' : 'AM'}>
-                    <MenuItem value={0}>AM</MenuItem>
-                    <MenuItem value={1}>PM</MenuItem>
-                  </SelectField>
-                  <RadioButtonGroup
-                    style={{ marginTop: 15,
-                             marginLeft: 15
-                           }}
-                    name="appointmentTimes"
-                    defaultSelected={data.appointmentSlot}
-                    onChange={(evt, val) => this.handleSetAppointmentSlot(val)}>
-                    {this.renderAppointmentTimes()}
-                  </RadioButtonGroup>
-                </StepContent>
-              </Step>
-              <Step disabled={ !Number.isInteger(this.state.appointmentSlot) }>
-                <StepButton onClick={() => this.setState({ stepIndex: 2 })}>
-                  Share your contact information with us and we'll send you a reminder
-                </StepButton>
+             
                 <StepContent>
                   <section>
                     <TextField
@@ -358,10 +335,11 @@ export default class App extends Component {
                       onChange={(evt, newValue) => this.validatePhone(newValue)} />
                       <TextField
                       style={{ display: 'block' }}
-                      name="timeSlot"
-                      floatingLabelText="Enter good times for you, your coach will respond"
-                     
-                       />
+                      name="appointmentSlot"
+                      
+                      floatingLabelText="Suggest a Time"
+                      errorText={data.appointmentSlot ? null: 'Enter a valid phone number'}
+                      onChange={(evt, newValue) => this.setState({ appointmentSlot : newValue })}/>
                     <RaisedButton
                       style={{ display: 'block' }}
                       label={contactFormFilled ? 'Schedule' : 'Fill out your information to schedule'}
@@ -383,11 +361,7 @@ export default class App extends Component {
             title="Confirm your appointment">
             {this.renderAppointmentConfirmation()}
           </Dialog>
-          <SnackBar
-            open={confirmationSnackbarOpen || loading}
-            message={loading ? 'Loading... ' : data.confirmationSnackbarMessage || ''}
-            autoHideDuration={10000}
-            onRequestClose={() => this.setState({ confirmationSnackbarOpen: false })} />
+         
         </section>
       </div>
     )

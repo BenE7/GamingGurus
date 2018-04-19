@@ -18,7 +18,7 @@ router.route("/api/getUser/:id")
 router.route("/api/ratings")
  .get(ratingsController.findAll);
 
- router.route("/api/postRating")
+ router.route("/api/postRating/:id")
  .post(ratingsController.createRating);
 
  router.route("/api/updateRating/:id")
@@ -28,11 +28,11 @@ router.route("/api/ratings")
  // .get(ratingsController.findOne)
 
  router.route("/api/isGuru")
-   .post(usersController.changeToGuru)
+  // .post(usersController.changeToGuru)
 
    router.route("/api/appointments")
    .get(appoinmentsController.findAll)
-    .post(appoinmentsController.createAppointment)
+   .post(appoinmentsController.createAppointment)
 
 
 

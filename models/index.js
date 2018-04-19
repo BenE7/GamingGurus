@@ -1,4 +1,5 @@
 module.exports = {
     User : require("./users"),
-    Rating : require("./ratings")
+    Rating : require("./ratings"),
+    Appointments : require('./appointments')
   };

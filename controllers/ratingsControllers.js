@@ -40,6 +40,7 @@ module.exports = {
       createRating : function(req, res) {
         console.log('line 24 req , create  first rating')
         console.log(req.body)
+        console.log( 'create first rating ' , req.params)
         
        db.Rating
        .create(req.body)
@@ -55,7 +56,7 @@ module.exports = {
         //  }
         
           console.log('creation first rating', rating2)
-           return db.User.findOneAndUpdate({_id : req.params._id }, { $set: { ratings: rating2._id  }},  { $inc: {totalRatings:1}})
+           return db.User.findOneAndUpdate({ twitchToken : req.params.id }, { $set: { ratings: rating2._id  }},  { $inc: {totalRatings:1}})
           .then(function(dbUser) {
         //   // If the User was updated successfully, send it back to the client
           res.json(dbUser);
