@@ -110,7 +110,7 @@ componentDidMount(rating) {
             <h1 id="profile-header" style={{textAlign:"center", fontFamily:"Bungee Shade", color:"white", textShadow: "2px 1px black", margin: "10px auto 50px auto"}}>Profile</h1>
                  <div className="container">
                     <div className="row">
-                        <UserInfo userinfo={this.state.user}  updateRating={this.updateRating} createRating={this.createRating} ratingId={this.state.ratingId} />
+                  
                     </div>
                    
            
