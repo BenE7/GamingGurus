@@ -4,7 +4,7 @@ import {Button } from 'react-bootstrap';
 import "./Home.css";
 import Checkout from "../../Checkout";
 import request from "request" 
-import controller from "./controller.jpg"
+
 
 class Home extends Component {
   // buttonClick = () => {
@@ -89,7 +89,7 @@ class Home extends Component {
             }
           </div>
           <h1 id="twitchbadge"><img height="130" width="130" alt="twitch symbol" src="./assets/images/twitchbadge.png"/></h1>
-          <h1 id="thecontroller"><img height="600" width="620" alt="controller" src={controller}/></h1>
+          <h1 id="thecontroller"><img height="600" width="620" alt="controller"  src="./assets/images/controller.png"/></h1>
           <div id="wrapper" className="container">
             <div className="row">
               <div className="col s12">

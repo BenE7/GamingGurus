@@ -11,7 +11,7 @@ const configRoutes = require("./routes/payment");
 configRoutes(app);
 
 
-app.use(express.static("./client/build"));
+// app.use(express.static("./client/build"));
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended:true }));
