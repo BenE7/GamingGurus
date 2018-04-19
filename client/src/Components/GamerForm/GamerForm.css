@@ -25,7 +25,7 @@ form h6 {
   align-items: center;
 }
 
-input[type=text] {
+.game-form input[type=text] {
   font-size: 12px !important;
   color: #ccc;
 }
