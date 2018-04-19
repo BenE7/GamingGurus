@@ -95,13 +95,13 @@ class Home extends Component {
                 <div className="col s6">
                   <h1 id="bethe">Be the</h1>
                   <h1 id="betheteacher">Teacher!</h1>
-                  <img id="mario" width="495" height="265" alt="mario background" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
+                  <img id="mario" width="495" height="265" alt="mario background" src={process.env.PUBLIC_URL + "/assets/images/mario.jpg"} />
                 </div>
                 <hr/>
                 <div className="col s6">
                   <h1 id="betheg">Be the</h1>
                   <h1 id="bethegamer">Gamer!</h1>
-                  <img id="games" width="489" height="265" alt="horizon background" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
+                  <img id="games" width="489" height="265" alt="horizon background" src={process.env.PUBLIC_URL + "/assets/images/horizon.jpeg"} />
                   <div id="inputbox" className="col-xs-3">
                   <div id="searchyourstream">Search for Streams</div>
                     <Search id="search" name="twitchSearch" />
