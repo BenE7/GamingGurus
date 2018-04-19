@@ -4,6 +4,11 @@
   border: 3px solid #5dc21e;
 }
 
+#user-pic {
+  width: 150px;
+  height:150px;
+}
+
 #picture {
   display: flex;
   flex-direction: column;
@@ -70,4 +75,10 @@
   height: 120px;
   width: 120px;
   margin: 50px;
+}
+
+#stripe-div {
+  position: absolute;
+  top: 42%;
+  right:15%;
 }

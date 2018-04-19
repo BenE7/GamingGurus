@@ -8,21 +8,21 @@ const routes = require("./routes/api/routes")
 const PORT = process.env.PORT || 8080;
 
 const configRoutes = require("./routes/payment");
-configRoutes(app);
+configRoutes(app)
 
-// var allowCrossDomain = function(req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-//     // intercept OPTIONS method
-//     if ('OPTIONS' == req.method) {
-//     res.sendStatus(200);
-//     } else {
-//     next();
-//     }
-//     };
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+    res.sendStatus(200);
+    } else {
+    next();
+    }
+    };
     
-// app.use(allowCrossDomain);
+app.use(allowCrossDomain);
 
 
 app.use(express.static("./client/build"));
@@ -40,7 +40,25 @@ app.listen(PORT, function(){
 })
 
 
-
+function finduser(accessToken, ctx, cb) {
+    request.get('https://api.twitch.tv/kraken/user', {
+      headers: {
+        'Authorization': 'OAuth ' + accessToken,
+        'Accept': 'application/vnd.twitchtv.v5+json',
+        'Client-ID': 'q1m75qqduluurj17mc4sxz1w8y9kuo'
+      }
+    }, function(e, r, b) {
+      if (e) return cb(e);
+      if (r.statusCode !== 200) return cb(new Error('StatusCode: ' + r.statusCode));
+      var profile = JSON.parse(b);
+      profile.id = profile._id;
+      delete profile._id;
+      profile.links = profile._links;
+      delete profile._links;
+      console.log(profile)
+      return cb(null, profile);
+    });
+  }
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

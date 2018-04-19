@@ -3,9 +3,6 @@ import "./Bio.css";
 import Faves from "../Faves";
 
 class Bio extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className="row">
