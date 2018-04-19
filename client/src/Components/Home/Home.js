@@ -5,6 +5,7 @@ import "./Home.css";
 import Checkout from "../../Checkout";
 import request from "request" 
 
+
 class Home extends Component {
   // buttonClick = () => {
   //   console.log("saveUser");
@@ -31,7 +32,7 @@ class Home extends Component {
   }
 
   function(accessToken, ctx, cb) {
-    console.log("fuckyou")
+    console.log("fudgeyou")
     request.get('https://api.twitch.tv/kraken/user', {
       headers: {
         'Authorization': 'OAuth ' + accessToken,
@@ -88,20 +89,20 @@ class Home extends Component {
             }
           </div>
           <h1 id="twitchbadge"><img height="130" width="130" alt="twitch symbol" src="./assets/images/twitchbadge.png"/></h1>
-          <h1 id="thecontroller"><img height="600" width="620" alt="controller" src="./assets/images/classiccontroller.png"/></h1>
+          <h1 id="thecontroller"><img height="600" width="620" alt="controller"  src="./assets/images/classiccontroller.png"/></h1>
           <div id="wrapper" className="container">
             <div className="row">
               <div className="col s12">
                 <div className="col s6">
                   <h1 id="bethe">Be the</h1>
                   <h1 id="betheteacher">Teacher!</h1>
-                  <img id="mario" width="495" height="265" alt="mario background" src={process.env.PUBLIC_URL + "./assets/images/mario.jpg"} />
+                  <img id="mario" width="495" height="265" alt="mario background" src={process.env.PUBLIC_URL + "/assets/images/mario.jpg"} />
                 </div>
                 <hr/>
                 <div className="col s6">
                   <h1 id="betheg">Be the</h1>
                   <h1 id="bethegamer">Gamer!</h1>
-                  <img id="games" width="489" height="265" alt="horizon background" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
+                  <img id="games" width="489" height="265" alt="horizon background" src={process.env.PUBLIC_URL + "/assets/images/horizon.jpeg"} />
                   <div id="inputbox" className="col-xs-3">
                   <div id="searchyourstream">Search for Streams</div>
                     <Search id="search" name="twitchSearch" />

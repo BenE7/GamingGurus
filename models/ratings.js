@@ -15,7 +15,7 @@ var RatingSchema = new Schema({
 
  totalRatings : {
    type: Number,
-   default : 0
+   default : 1
  },
 
 

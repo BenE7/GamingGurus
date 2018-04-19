@@ -8,24 +8,10 @@ const routes = require("./routes/api/routes")
 const PORT = process.env.PORT || 8080;
 
 const configRoutes = require("./routes/payment");
-configRoutes(app)
-
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-    res.sendStatus(200);
-    } else {
-    next();
-    }
-    };
-    
-app.use(allowCrossDomain);
+configRoutes(app);
 
 
-app.use(express.static("./client/build"));
+// app.use(express.static("./client/build"));
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended:true }));
@@ -34,6 +20,16 @@ app.use(bodyParser.json());
 
 // Add routes, both API and view
 app.use(routes);
+
+
+// ... other app.use middleware setups
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {  
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(PORT, function(){
     console.log(`Server now on port ${PORT}`)
