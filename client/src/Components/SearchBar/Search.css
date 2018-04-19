@@ -84,3 +84,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#streampagesearchfont {
+    position: absolute;
+    font-family: "Bungee Shade";
+    font-size: 18px;
+    color: #6441A4;
+    margin-left: 893px;
+    margin-top: 380px;
+}
+
+input[type=text] {
+    font-size: 50px;
+    color: #ccc;
+}
