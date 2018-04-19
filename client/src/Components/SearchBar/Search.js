@@ -55,7 +55,8 @@ class Search extends Component {
           <div className="col s6">
             <div className="row">
               <div className="input-field col s6">
-                <input name="twitchSearch"  onChange={this.handleInputChange}  type="text" id="autocomplete-input" className="autocomplete"/>
+              <div id="streampagesearchfont">Search Your Stream</div>
+                <input name="twitchSearch"  onChange={this.handleInputChange} style={{fontSize: "50px"}}  type="text" id="autocomplete-input" className="autocomplete"/>
                 <button onClick={this.handleSubmitForm} id="playbtn" className="btn waves-effect waves-light" type="submit" name="action">Submit
                 </button>
               </div>

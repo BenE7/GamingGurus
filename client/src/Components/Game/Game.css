@@ -1,13 +1,25 @@
 #pagewrapper {
     background: url("./purplebackground.jpg");
     height: 1300px;
-    
 }
 
-#thetwitchbox{
+#thetwitchbox {
     height: 490px;
     width: 950px;
     margin-top: -480px;
     margin-left: 250px;
     margin-bottom: 20px;
+}
+
+#gamepagesearch #playbtn {
+    margin-top: 440px;
+    margin-left: 1055px;
+}
+
+#gamepagesearch #autocomplete-input {
+    font-size: 20px !important;
+    background-color: rgba(100, 64, 164, 0.5);
+    width: 250px;
+    margin-top: 405px;
+    margin-left: 890px;
 }
