@@ -28,7 +28,7 @@ class Home extends Component {
             <h1 id="subhead">Powered by Twitch</h1>
           </div>
           <h1 id="twitchbadge"><img height="130" width="130" alt="twitch symbol" src="./assets/images/twitchbadge.png"/></h1>
-          <h1 id="thecontroller"><img height="400" width="400" alt="controller" src="./assets/images/classiccontroller.png"/></h1>
+          <h1 id="thecontroller"><img height="600" width="620" alt="controller" src="./assets/images/classiccontroller.png"/></h1>
           <div id="wrapper" className="container">
             <div className="row">
               <div className="col s12">
@@ -51,6 +51,7 @@ class Home extends Component {
                   <h1 id="bethegamer">Gamer!</h1>
                   <img id="games" width="489" height="265" alt="horizon background" src={process.env.PUBLIC_URL + "./assets/images/horizon.jpeg"} />
                   <div id="inputbox" className="col-xs-3">
+                  <div id="searchyourstream">Search for Streams</div>
                     <Search id="search" name="twitchSearch" />
                   </div>
                 </div>
