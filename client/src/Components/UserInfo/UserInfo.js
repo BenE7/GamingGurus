@@ -2,7 +2,7 @@ import React from "react";
 import GuruRating from "../GuruRating/GuruRating.js";
 import "./UserInfo.css";
 import SchedulingModal from "../SchedulerModal/SchedulerModal"
-import Scheduler from "../Scheduler/Scheduler"
+
 
 
  const UserInfo = (props) =>

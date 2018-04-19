@@ -27,15 +27,11 @@ class Teacher extends Component {
         }
     }
 }
-    // getToke = () => {
-    //     API.getloogedtoke()
-    //     .then(res => this.setState({ loggedInToken : res.twitchToken}))
-        
-    // }
-componentWillMount = () => {
-  //  console.log(this.props.location.state.twitchToken)
-    this.loadRating();
-}
+   
+// componentWillMount = () => {
+      //  console.log(this.props.location.state.twitchToken)
+//     this.loadRating();
+// }
     
 loadRating = event => {
    // console.log(this.state.twitchToken)
@@ -49,7 +45,7 @@ loadRating = event => {
            user: res.data
         };
       });
-  //  this.setState({ user: res.data })
+
     
     })
     
@@ -58,28 +54,13 @@ loadRating = event => {
   }
 
 
-
 componentDidMount(rating) {
-    
-    // Just gets all the rating info stictly to test
-    // API.getRatings()
-    // .then(res => console.log('rating res' ,res))
      this.loadRating()
 
-    // //API.newRating({
-    //    // rating : Math.floor(Math.random() * 5 + 1)
-    //   console.log('inside didMount create, rating or update' , this.state.user )
-    console.log(this.state)
-      
-       
-       
-       
-    //  })
-   
-    }
+   }
 
    createRating = (newRating) =>{
-    console.log(this.state.user.twitchToken)
+    //console.log(this.state.user.twitchToken)
     API.createRating(this.state.user.twitchToken, {
         rating : newRating
          })
@@ -94,8 +75,8 @@ componentDidMount(rating) {
         console.log('total ratings', totalRatings , 'current rate' , currentRating, 'click', clickValue)
        let updatedRating =  ((((currentRating * totalRatings) + clickValue)  / (totalRatings + 1) * 1 ) / 1).toFixed(2)
        let newTotalRating = this.state.user.ratings[0].totalRatings + 1
-       console.log('new total raitngs' , newTotalRating)
-       console.log('new rating', updatedRating)
+      // console.log('new total raitngs' , newTotalRating)
+      // console.log('new rating', updatedRating)
        API.updateRating(this.state.user.ratings[0]._id , {
          
          rating : updatedRating,
@@ -115,7 +96,7 @@ componentDidMount(rating) {
                     <div className="row">
                         <UserInfo userinfo={this.state.user}  updateRating={this.updateRating} createRating={this.createRating} ratingId={this.state.ratingId} />
                     </div>
-                    
+                    <Bio userinfo={this.state.user} />
            
                  </div>
            </div>

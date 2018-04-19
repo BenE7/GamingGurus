@@ -73,11 +73,11 @@ export default class App extends Component {
   handleNextStep() {
     const { stepIndex } = this.state
     return (stepIndex < 3) ? this.setState({ stepIndex: stepIndex + 1}) : null
-    console.log('handke step' , this.state)
+ //   console.log('handke step' , this.state)
   }
 
   handleSetAppointmentDate(date) {
-    console.log(this.state)
+    //console.log(this.state)
     this.handleNextStep()
     this.setState({ appointmentDate: date, confirmationTextVisible: true , appointmentDateSelected:true,  stepIndex : 1} , () =>console.log(this.state))
     
@@ -95,7 +95,7 @@ export default class App extends Component {
   handleFetch(response) {
     const appointments  = response;
 
-    console.log(appointments , 'apts handle fetch')
+    // console.log(appointments , 'apts handle fetch')
     const initSchedule = {}
     const today = moment().startOf('day')
     initSchedule[today.format('YYYY-DD-MM')] = true
@@ -114,14 +114,6 @@ export default class App extends Component {
       slots.length ? (slots.every(slot => slot === true)) ? schedule[day] = true : null : null
     }
 
-    // this.setState({
-    //   schedule,
-    //   siteTitle: configs.site_title,
-    //   aboutPageUrl: configs.about_page_url,
-    //   contactPageUrl: configs.contact_page_url,
-    //   homePageUrl: configs.home_page_url,
-    //   loading: false
-    // })
   }
 
   handleFetchError(err) {
@@ -143,12 +135,7 @@ export default class App extends Component {
       console.log(err)
       return this.setState({ confirmationSnackbarMessage: "Appointment failed to save.", confirmationSnackbarOpen: true })
     })
-    // axios.post(HOST + 'api/appointments', appointment)
-    // .then(response => this.setState({ confirmationSnackbarMessage: "Appointment succesfully added!", confirmationSnackbarOpen: true, processed: true }))
-    // .catch(err => {
-    //   console.log(err)
-    //   return this.setState({ confirmationSnackbarMessage: "Appointment failed to save.", confirmationSnackbarOpen: true })
-    // })
+  
   }
 
   validateEmail(email) {
@@ -243,7 +230,7 @@ export default class App extends Component {
         primary={true}
         onClick={() => this.handleSubmit()} />
     ]
-    console.log(data)
+   // console.log(data)
     return (
      
         
