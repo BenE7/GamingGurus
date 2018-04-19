@@ -30,7 +30,7 @@ const GuruRating =(props) => {
       initialValue={2.5} 
       fillBG="#d20014" 
       containerStyle={{maxWidth: '200px', maxHeight: "50px"}}
-     
+      
       editable={true}
       lockRating={true} />
     )}
