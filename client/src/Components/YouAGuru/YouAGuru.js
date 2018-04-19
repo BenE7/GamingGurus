@@ -41,7 +41,7 @@ class YouAGuru extends Component {
   render() {
     return (
       <div style={{background: "#000000 url(" + process.env.PUBLIC_URL + "/assets/images/logo.gif) top center / 25% 50% no-repeat", minHeight : "650px"}}>
-      <form style={{fontFamily:"Press Start 2P", fontSize: "20px", padding: "10px",textAlign: "center", position: "absolute", height: "40%", width:"30%", top:"66%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
+      <form style={{fontFamily:"Press Start 2P", fontSize: "20px", padding: "10px",textAlign: "center", position: "absolute", height: "25%", width:"30%", top:"66%", left:"50%", transform: "translate(-50%, -50%)"}} className="container" onSubmit={this.handleFormSubmit}>
         <h4>What role would you like to create an account for?</h4>
         <CheckboxOrRadioGroup
           className="you-a-guru"

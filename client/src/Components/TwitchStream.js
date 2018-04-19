@@ -23,9 +23,6 @@ const TwitchStream=(props) => {
   document.body.appendChild(script);
     
      return <div>
-        <div id="streamhead">
-          <h1 id="streamheadtext">Your Stream</h1>
-        </div>
          <div id="streambox">
            <div className="gamepagestream" id={props.targetID} />
          </div>
