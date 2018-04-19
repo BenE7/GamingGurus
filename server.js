@@ -36,7 +36,25 @@ app.listen(PORT, function(){
 })
 
 
-
+function finduser(accessToken, ctx, cb) {
+    request.get('https://api.twitch.tv/kraken/user', {
+      headers: {
+        'Authorization': 'OAuth ' + accessToken,
+        'Accept': 'application/vnd.twitchtv.v5+json',
+        'Client-ID': 'q1m75qqduluurj17mc4sxz1w8y9kuo'
+      }
+    }, function(e, r, b) {
+      if (e) return cb(e);
+      if (r.statusCode !== 200) return cb(new Error('StatusCode: ' + r.statusCode));
+      var profile = JSON.parse(b);
+      profile.id = profile._id;
+      delete profile._id;
+      profile.links = profile._links;
+      delete profile._links;
+      console.log(profile)
+      return cb(null, profile);
+    });
+  }
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

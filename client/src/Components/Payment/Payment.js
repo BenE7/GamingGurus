@@ -5,9 +5,9 @@ class Payment extends Component {
   render() {
     return (
       <Checkout
-        name={'The Road to learn React'}
-        description={'Only the Book'}
-        amount={1}
+        name={'Genuine Game Gurus'}
+        description={'Get Good'}
+        amount={10}
       />
     )
   }

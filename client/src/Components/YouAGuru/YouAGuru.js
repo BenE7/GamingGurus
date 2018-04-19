@@ -7,7 +7,8 @@ class YouAGuru extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      twitchToken: this.props.location.state.twitchToken,
+      username: this.props.location.state.username,
+      picture: this.props.location.state.picture,
 			typeOfUser: ""
 		};
 		this.handleGuruSelect = this.handleGuruSelect.bind(this);
@@ -28,7 +29,8 @@ class YouAGuru extends Component {
     setTimeout(history.push({
         pathname: "/infoform",
         state: { 
-          twitchToken: this.state.twitchToken,
+          username: this.state.username,
+          picture: this.state.picture,
           guru: formPayload.guru
         }
       }), 1500)

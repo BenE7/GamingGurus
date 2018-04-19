@@ -6,12 +6,15 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
  
-  twitchToken: {
-    type: 'Number',
+  username: {
+    type: 'String',
     unique: true,
     //dropDups: true
   },
-
+  picture: {
+    type: 'String'
+  },
+  
   guru : {
     type: 'Boolean',
   },
