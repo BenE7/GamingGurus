@@ -19,7 +19,7 @@ class Teacher extends Component {
             ps: '',
             steam: '',
             selectedGames: [],
-            rating:[],
+            rating:[0],
             gameSelections: ["Rocket League", "Player Unknown's Battle Grounds", "Fortnite", "League of Legends"],
             achieve1: '',
             achieve2: '',
@@ -29,11 +29,7 @@ class Teacher extends Component {
         }
     }
 }
-    // getToke = () => {
-    //     API.getloogedtoke()
-    //     .then(res => this.setState({ loggedInToken : res.username}))
-        
-    // }
+
 componentWillMount = () => {
     if (this.props.location.state && this.props.location.state.username) {
     console.log()
